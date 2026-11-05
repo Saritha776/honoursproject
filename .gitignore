@@ -1,0 +1,25 @@
+# EDA Simulation artifacts
+xsim.dir/
+*.jou
+*.log
+*.pb
+*.vcd
+*.fsdb
+*.wdb
+xvlog.pb
+xvlog.log
+xelab.pb
+xelab.log
+xsim.log
+webtalk/
+
+# Compiler outputs
+*.o
+*.elf
+*.bin
+test_host.exe
+firmware/*.exe
+
+# Python caches
+__pycache__/
+*.pyc
