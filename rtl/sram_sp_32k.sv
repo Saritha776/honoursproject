@@ -37,7 +37,7 @@ module sram_sp_32k #(
         end
     end
 
-    always_ff @(posedge clk or negedge rst_n) begin
+    always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             wb_ack_o <= 1'b0;
             wb_dat_o <= 32'h0000_0000;

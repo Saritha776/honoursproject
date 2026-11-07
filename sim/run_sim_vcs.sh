@@ -12,7 +12,8 @@ echo "   Compiling NeuroEdge SoC with Synopsys VCS           "
 echo "======================================================="
 
 # Compile with Knowledge Database (-kdb) and FSDB dump define for Verdi
-vcs -sverilog \
+vcs -full64 \
+    -sverilog \
     -kdb \
     -debug_access+all \
     -lca \

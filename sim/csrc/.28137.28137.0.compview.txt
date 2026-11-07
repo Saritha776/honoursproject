@@ -1,0 +1,7 @@
+Command exited with non-zero status 255
+{"vcs1":{"timestamp_begin":1794030957.091508514, "rt":2.31, "ut":0.07, "st":0.05}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1794030956.889686211}
+{"VCS_COMP_START_TIME": 1794030956.889686211}
+{"VCS_COMP_END_TIME": 1794030959.435012920}
+{"VCS_USER_OPTIONS": "-full64 -sverilog -kdb -debug_access+all -lca -timescale=1ns/1ps +define+DUMP_FSDB -f ../tb/filelist.f -top tb_neuroedge_soc -l vcs_compile.log"}
+{"vcs1": {"peak_mem": 534764}}

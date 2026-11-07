@@ -1,0 +1,7 @@
+Command exited with non-zero status 255
+{"vcs1":{"timestamp_begin":1794031775.403069687, "rt":1.14, "ut":0.05, "st":0.01}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1794031775.199257147}
+{"VCS_COMP_START_TIME": 1794031775.199257147}
+{"VCS_COMP_END_TIME": 1794031776.574294381}
+{"VCS_USER_OPTIONS": "-full64 -sverilog -kdb -lca +define+RV_OPENSOURCE +incdir+/home/student/Documents/honoursproject/honoursproject/Cores-VeeR-EL2-main/snapshots/default +incdir+/home/student/Documents/honoursproject/honoursproject/Cores-VeeR-EL2-main/design/include +incdir+/home/student/Documents/honoursproject/honoursproject/Cores-VeeR-EL2-main/testbench /home/student/Documents/honoursproject/honoursproject/Cores-VeeR-EL2-main/design/include/el2_def.sv -f /home/student/Documents/honoursproject/honoursproject/Cores-VeeR-EL2-main/testbench/flist -top el2_veer_wrapper -l vcs_veer_test.log"}
+{"vcs1": {"peak_mem": 534728}}

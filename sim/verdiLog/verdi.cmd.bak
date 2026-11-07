@@ -1,0 +1,14 @@
+simSetSimulator "-vcssv" -exec \
+           "/home/student/Documents/honoursproject/honoursproject/sim/simv" \
+           -args
+debImport "-simv" "simv" "-dbdir" \
+          "/home/student/Documents/honoursproject/honoursproject/sim/simv.daidir"
+debLoadSimResult \
+           /home/student/Documents/honoursproject/honoursproject/sim/neuroedge_sim.fsdb
+wvCreateWindow
+verdiWindowResize -win $_Verdi_1 "340" "92" "900" "700"
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+verdiSetActWin -win $_nWave2
+wvAddAllSignals -win $_nWave2
+verdiDockWidgetMaximize -dock windowDock_nWave_2

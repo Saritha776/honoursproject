@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1794028067.632282384, "rt":1.59, "ut":0.19, "st":0.06}}
+{"vcselab":{"timestamp_begin":1794028069.249857898, "rt":1.44, "ut":0.10, "st":0.03}}
+{"link":{"timestamp_begin":1794028070.708538309, "rt":0.10, "ut":0.07, "st":0.02}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1794028067.431189113}
+{"VCS_COMP_START_TIME": 1794028067.431189113}
+{"VCS_COMP_END_TIME": 1794028070.860394855}
+{"VCS_USER_OPTIONS": "-full64 -sverilog -kdb -debug_access+all -lca -timescale=1ns/1ps +define+DUMP_FSDB -f ../tb/filelist.f -top tb_neuroedge_soc -l vcs_compile.log"}
+{"vcs1": {"peak_mem": 534760}}
+{"vcselab": {"peak_mem": 243816}}

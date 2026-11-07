@@ -38,6 +38,7 @@ module uart_16550 (
     // Registers & Status
     logic [15:0] baud_div;
     logic        rx_overrun;
+    logic        rx_overrun_set;
     logic        tx_busy;
     
     // 8-byte TX FIFO
@@ -91,6 +92,10 @@ module uart_16550 (
             wb_dat_o    <= 32'h0000_0000;
         end else begin
             wb_ack_o <= 1'b0;
+
+            if (rx_overrun_set) begin
+                rx_overrun <= 1'b1;
+            end
 
             if (wb_stb_i && wb_cyc_i && !wb_ack_o) begin
                 wb_ack_o <= 1'b1;
@@ -187,13 +192,15 @@ module uart_16550 (
     // UART Receiver Engine (16x oversampling)
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            rx_busy       <= 1'b0;
-            rx_baud_cnt   <= 16'd0;
-            rx_sample_cnt <= 4'd0;
-            rx_bit_idx    <= 4'd0;
-            rx_shift_reg  <= 8'h00;
-            rx_wr_ptr     <= 3'd0;
+            rx_busy        <= 1'b0;
+            rx_baud_cnt    <= 16'd0;
+            rx_sample_cnt  <= 4'd0;
+            rx_bit_idx     <= 4'd0;
+            rx_shift_reg   <= 8'h00;
+            rx_wr_ptr      <= 3'd0;
+            rx_overrun_set <= 1'b0;
         end else begin
+            rx_overrun_set <= 1'b0;
             if (!rx_busy) begin
                 if (!rx_sync2) begin // Detected Start bit falling edge
                     rx_busy       <= 1'b1;
@@ -221,7 +228,7 @@ module uart_16550 (
                                 rx_fifo[rx_wr_ptr] <= rx_shift_reg;
                                 rx_wr_ptr          <= rx_wr_ptr + 1'b1;
                             end else begin
-                                rx_overrun <= 1'b1;
+                                rx_overrun_set <= 1'b1;
                             end
                             rx_busy <= 1'b0;
                         end

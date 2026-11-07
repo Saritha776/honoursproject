@@ -37,7 +37,7 @@ void systolic_feed_activations_direct(const int8_t activations[4]) {
 }
 
 void systolic_trigger(void) {
-    ARRAY_REG_CTRL |= ARRAY_CTRL_START;
+    // Note: Injection into ARRAY_REG_ACT_PORT automatically starts the 7-cycle systolic compute.
 }
 
 int systolic_wait_done(void) {

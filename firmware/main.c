@@ -42,7 +42,7 @@ int main(void) {
     // -------------------------------------------------------------------------
     // 1. Hardware Initialization
     // -------------------------------------------------------------------------
-    uart_init(434); // 115200 bps at 50 MHz
+    uart_init(16); // High-speed simulation baud divisor (320 ns per bit at 50 MHz)
     wdt_init(5000000, 1); // 100 ms timeout with reset enable
     timer_init(0xFFFFFFFF, 0);
     gpio_set_direction(0xFF); // Pins configured as outputs
@@ -142,6 +142,16 @@ int main(void) {
     uart_puts(" (Score = ");
     uart_print_dec(relu_results[top_class]);
     uart_puts(")\r\n");
+
+    int32_t softmax_results[4];
+    softmax_int32(relu_results, softmax_results, 4);
+    uart_puts("          Softmax Distribution: [");
+    for (int i = 0; i < 4; i++) {
+        uart_print_dec(softmax_results[i]);
+        uart_puts("%");
+        if (i < 3) uart_puts(", ");
+    }
+    uart_puts("]\r\n");
 
     // -------------------------------------------------------------------------
     // 8. Final Status Verification

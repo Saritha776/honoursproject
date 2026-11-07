@@ -1,0 +1,226 @@
+11       
+0 el2_pdef.vh
+0 /home/student/snps_tools_target/vcs/U-2023.03/etc/systemverilog/el2_pdef.vh
+0 common_defines.vh
+0 /home/student/snps_tools_target/vcs/U-2023.03/etc/systemverilog/common_defines.vh
+0 el2_param.vh
+0 /home/student/snps_tools_target/vcs/U-2023.03/etc/systemverilog/el2_param.vh
+0 pic_map_auto.svh
+0 /home/student/snps_tools_target/vcs/U-2023.03/etc/systemverilog/pic_map_auto.svh
+0 el2_dec_csr_equ_m.svh
+0 /home/student/snps_tools_target/vcs/U-2023.03/etc/systemverilog/el2_dec_csr_equ_m.svh
+0 ../Cores-VeeR-EL2-main/snapshots/default/el2_dec_csr_equ_m.svh
+40
++define+DUMP_FSDB
++itf+/home/student/snps_tools_target/vcs/U-2023.03/linux64/lib/vcsdp_lite.tab
++vcsd1
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/home/student/snps_tools_target/vcs/U-2023.03/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /home/student/snps_tools_target/vcs/U-2023.03/linux64/lib/libvirsim.so /home/student/snps_tools_target/vcs/U-2023.03/linux64/lib/liberrorinf.so /home/student/snps_tools_target/vcs/U-2023.03/linux64/lib/libsnpsmalloc.so /home/student/snps_tools_target/vcs/U-2023.03/linux64/lib/libvfs.so
+-Mout=simv
+-Msaverestoreobj=/home/student/snps_tools_target/vcs/U-2023.03/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=/home/student/snps_tools_target/verdi/U-2023.03-SP1/share/PLI/VCS/LINUX64/pli.a -ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/home/student/snps_tools_target/vcs/U-2023.03/include
+-Mxllcflags=
+-P
+-Xufe=2steps
+-debug_access+all
+-f ../tb/filelist.f
+-fsdb
+-full64
+-gen_obj
+-kdb
+-l
+-lca
+-picarchive
+-sverilog
+-timescale=1ns/1ps
+-top
+/home/student/snps_tools_target/vcs/U-2023.03/linux64/bin/vcs1
+vcs_compile.log
+tb_neuroedge_soc
+/home/student/snps_tools_target/verdi/U-2023.03-SP1/share/PLI/VCS/LINUX64/verdi.tab
+../tb/filelist.f
+88
+which_declare=declare -f
+XMODIFIERS=@im=ibus
+XDG_VTNR=2
+XDG_SESSION_TYPE=wayland
+XDG_SESSION_ID=2
+XDG_SESSION_DESKTOP=gnome
+XDG_SEAT=seat0
+XDG_RUNTIME_DIR=/run/user/1000
+XDG_MENU_PREFIX=gnome-
+XDG_DATA_DIRS=/home/student/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/
+XDG_CURRENT_DESKTOP=GNOME
+XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.5FP3X3
+WAYLAND_DISPLAY=wayland-0
+VTE_VERSION=5204
+VMR_MODE_FLAG=64
+VERDI_HOME=/home/student/snps_tools_target/verdi/U-2023.03-SP1
+VCS_PATHMAP_PRELOAD_DONE=1
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_LOG_FILE=vcs_compile.log
+VCS_LCAMSG_PRINT_OFF=1
+VCS_HOME=/home/student/snps_tools_target/vcs/U-2023.03
+VCS_EXEC_DONE=1
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+USERNAME=student
+UNAME=/bin/uname
+TOOL_HOME=/home/student/snps_tools_target/vcs/U-2023.03/linux64
+S_COLORS=auto
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SNPS_VERDI_INTERNAL_LP_XML_NEW_FLOW=1
+SNPS_VCS_CLANG_PATH=/home/student/snps_tools_target/vcs/U-2023.03/linux64/clang
+SNPS_INTERNAL_VCS_LINUX_OS=linux
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/4900,unix/unix:/tmp/.ICE-unix/4900
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+QT_IM_MODULE=ibus
+OVA_UUM=0
+MODULES_RUN_QUARANTINE=LD_LIBRARY_PATH LD_PRELOAD
+MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl
+MODULESHOME=/usr/share/Modules
+MODULEPATH_modshare=/usr/share/Modules/modulefiles:2:/etc/modulefiles:2:/usr/share/modulefiles:2
+MODULEPATH=/etc/scl/modulefiles:/etc/scl/modulefiles:/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
+MANAGERPID=4850
+LOADEDMODULES=
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LC_ALL=C
+JOURNAL_STREAM=9:57700
+JJ_PAGER=cat
+JJ_EDITOR=false
+INVOCATION_ID=58a0e689cb4f44468390b279cb63ba08
+HISTCONTROL=ignoredups
+HGEDITOR=false
+GUESTFISH_RESTORE=\e[0m
+GUESTFISH_PS1=\[\e[1;32m\]><fs>\[\e[0;31m\] 
+GUESTFISH_OUTPUT=\e[0m
+GUESTFISH_INIT=\e[1;34m
+GNOME_TERMINAL_SERVICE=:1.81
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/518e6da5_df40_4c08_aaa6_b4675aa2c25d
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+GIT_PAGER=cat
+GIT_EDITOR=false
+GDM_LANG=en_GB.UTF-8
+GDMSESSION=gnome
+DESKTOP_SESSION=gnome
+DEBUGINFOD_URLS=https://debuginfod.centos.org/ 
+DBUS_STARTER_BUS_TYPE=session
+DBUS_STARTER_ADDRESS=unix:path=/run/user/1000/bus,guid=98c2623983a0e7de294715916aeea837
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus,guid=98c2623983a0e7de294715916aeea837
+COLORTERM=truecolor
+BASH_FUNC_which%%=() {  ( alias;_ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@_}
+BASH_FUNC_switchml%%=() {  typeset swfound=1;_ if [ "${MODULES_USE_COMPAT_VERSION:-0}" = '1' ]; then_ typeset swname='main';_ if [ -e /usr/share/Modules/libexec/modulecmd.tcl ]; then_ typeset swfound=0;_ unset MODULES_USE_COMPAT_VERSION;_ fi;_ else_ typeset swname='compatibility';_ if [ -e /usr/share/Modules/libexec/modulecmd-compat ]; then_ typeset swfound=0;_ MODULES_USE_COMPAT_VERSION=1;_ export MODULES_USE_COMPAT_VERSION;_ fi;_ fi;_ if [ $swfound -eq 0 ]; then_ echo "Switching to Modules $swname version";_ source /usr/share/Modules/init/bash;_ else_ echo "Cannot switch to Modules $swname version, command not found";_ return 1;_ fi_}
+BASH_FUNC_scl%%=() {  if [ "$1" = "load" -o "$1" = "unload" ]; then_ eval "module $@";_ else_ /usr/bin/scl "$@";_ fi_}
+BASH_FUNC_module%%=() {  _module_raw "$@" 2>&1_}
+BASH_FUNC_ml%%=() {  module ml "$@"_}
+BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then_ case "$-" in _ *v*x*)_ set +vx;_ _mlshdbg='vx'_ ;;_ *v*)_ set +v;_ _mlshdbg='v'_ ;;_ *x*)_ set +x;_ _mlshdbg='x'_ ;;_ *)_ _mlshdbg=''_ ;;_ esac;_ fi;_ unset _mlre _mlIFS;_ if [ -n "${IFS+x}" ]; then_ _mlIFS=$IFS;_ fi;_ IFS=' ';_ for _mlv in ${MODULES_RUN_QUARANTINE:-};_ do_ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then_ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then_ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";_ fi;_ _mlrv="MODULES_RUNENV_${_mlv}";_ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";_ fi;_ done;_ if [ -n "${_mlre:-}" ]; then_ eval `eval ${_mlre} /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;_ else_ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;_ fi;_ _mlstatus=$?;_ if [ -n "${_mlIFS+x}" ]; then_ IFS=$_mlIFS;_ else_ unset IFS;_ fi;_ unset _mlre _mlv _mlrv _mlIFS;_ if [ -n "${_mlshdbg:-}" ]; then_ set -$_mlshdbg;_ fi;_ unset _mlshdbg;_ return $_mlstatus_}
+ANTIGRAVITY_TRAJECTORY_ID=f47bced0-f0c6-4914-b3c0-a7cd26b8268f
+ANTIGRAVITY_SOURCE_METADATA={"tool":{"conversationId":"717e6460-3a8f-4508-af11-5f4523a5cfad", "stepIndex":1063, "toolCall":{"id":"call_9481527106581409176", "name":"run_command", "argumentsJson":"{\"CommandLine\":\"cd /home/student/Documents/honoursproject/honoursproject/sim \\u0026\\u0026 source ~/.bashrc \\u0026\\u0026 vcs -full64 -sverilog -kdb -debug_access+all -lca -timescale=1ns/1ps +define+DUMP_FSDB -f ../tb/filelist.f -top tb_neuroedge_soc -l vcs_compile.log \\u0026\\u0026 ./simv -l vcs_sim.log\",\"WaitMsBeforeAsync\":10000,\"toolSummary\":\"Recompile and run simulation\"}"}}}
+ANTIGRAVITY_PROJECT_ID=default-cli-project
+ANTIGRAVITY_LS_VERSION=cli-1.5.2
+ANTIGRAVITY_LS_ADDRESS=localhost:34551
+ANTIGRAVITY_CSRF_TOKEN=d473dc33-7481-406e-8e02-f0478d1868f7
+ANTIGRAVITY_CONVERSATION_ID=717e6460-3a8f-4508-af11-5f4523a5cfad
+ANTIGRAVITY_APP_DATA_DIR=/home/student/.gemini/antigravity-cli
+ANTIGRAVITY_AGENTAPI_EXE=/home/student/.local/bin/agy
+ANTIGRAVITY_AGENT=1
+0
+0
+74
+1794025652 ../Cores-VeeR-EL2-main/design/lib/beh_lib.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lib/beh_lib.sv
+1794025652 ../Cores-VeeR-EL2-main/design/include/el2_dec_csr_equ_m.svh
+1794031589 ../Cores-VeeR-EL2-main/snapshots/default/pic_map_auto.svh
+1794031588 ../Cores-VeeR-EL2-main/snapshots/default/el2_param.vh
+1794031588 ../Cores-VeeR-EL2-main/snapshots/default/common_defines.vh
+1794031588 ../Cores-VeeR-EL2-main/snapshots/default/el2_pdef.vh
+1794033729 ../tb/tb_neuroedge_soc.sv
+1794032956 ../rtl/neuroedge_soc_top.sv
+1794032094 ../rtl/axi4_to_wishbone.sv
+1794025652 ../rtl/soc_interconnect.sv
+1794027827 ../rtl/sram_dp_64k.sv
+1794030975 ../rtl/sram_sp_32k.sv
+1794025652 ../rtl/pic_controller.sv
+1794025652 ../rtl/gpio_8bit.sv
+1794025652 ../rtl/watchdog_timer.sv
+1794025652 ../rtl/timer_32bit.sv
+1794028416 ../rtl/uart_16550.sv
+1794025652 ../rtl/spi_flash_ctrl.sv
+1794025652 ../rtl/dma_controller.sv
+1794025652 ../rtl/systolic_array_4x4.sv
+1794025652 ../rtl/pe.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lib/mem_lib.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lib/beh_lib.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lib/el2_mem_if.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lib/el2_lib.sv
+1794025652 ../Cores-VeeR-EL2-main/design/dmi/rvjtag_tap.v
+1794025652 ../Cores-VeeR-EL2-main/design/dmi/dmi_jtag_to_core_sync.v
+1794025652 ../Cores-VeeR-EL2-main/design/dmi/dmi_wrapper.v
+1794025652 ../Cores-VeeR-EL2-main/design/dmi/dmi_mux.v
+1794025652 ../Cores-VeeR-EL2-main/design/dbg/el2_dbg.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lsu/el2_lsu_trigger.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lsu/el2_lsu_dccm_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lsu/el2_lsu_dccm_mem.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lsu/el2_lsu_ecc.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lsu/el2_lsu_bus_intf.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lsu/el2_lsu_bus_buffer.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lsu/el2_lsu_stbuf.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lsu/el2_lsu_lsc_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lsu/el2_lsu_addrcheck.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lsu/el2_lsu_clkdomain.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lsu/el2_lsu.sv
+1794025652 ../Cores-VeeR-EL2-main/design/exu/el2_exu.sv
+1794025652 ../Cores-VeeR-EL2-main/design/exu/el2_exu_div_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/exu/el2_exu_mul_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/exu/el2_exu_alu_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/dec/el2_dec.sv
+1794025652 ../Cores-VeeR-EL2-main/design/dec/el2_dec_trigger.sv
+1794025652 ../Cores-VeeR-EL2-main/design/dec/el2_dec_tlu_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/dec/el2_dec_pmp_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/dec/el2_dec_ib_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/dec/el2_dec_gpr_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/dec/el2_dec_decode_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/ifu/el2_ifu.sv
+1794025652 ../Cores-VeeR-EL2-main/design/ifu/el2_ifu_iccm_mem.sv
+1794025652 ../Cores-VeeR-EL2-main/design/ifu/el2_ifu_mem_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/ifu/el2_ifu_ic_mem.sv
+1794025652 ../Cores-VeeR-EL2-main/design/ifu/el2_ifu_bp_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/ifu/el2_ifu_ifc_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/ifu/el2_ifu_compress_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/ifu/el2_ifu_aln_ctl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/el2_pmp.sv
+1794025652 ../Cores-VeeR-EL2-main/design/el2_dma_ctrl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/el2_veer.sv
+1794025652 ../Cores-VeeR-EL2-main/design/el2_pic_ctrl.sv
+1794025652 ../Cores-VeeR-EL2-main/design/el2_mem.sv
+1794025652 ../Cores-VeeR-EL2-main/design/el2_veer_wrapper.sv
+1794025652 ../Cores-VeeR-EL2-main/testbench/veer_wrapper.sv
+1794025652 ../Cores-VeeR-EL2-main/design/el2_mubi_pkg.sv
+1794025652 ../Cores-VeeR-EL2-main/design/lib/el2_assert.sv
+1794025652 ../Cores-VeeR-EL2-main/design/include/el2_def.sv
+1794032365 ../tb/filelist.f
+1685268911 /home/student/snps_tools_target/verdi/U-2023.03-SP1/share/PLI/VCS/LINUX64/verdi.tab
+1677384340 /home/student/snps_tools_target/vcs/U-2023.03/linux64/lib/vcsdp_lite.tab
+4
+1677385575 /home/student/snps_tools_target/vcs/U-2023.03/linux64/lib/libvirsim.so
+1677385060 /home/student/snps_tools_target/vcs/U-2023.03/linux64/lib/liberrorinf.so
+1677385018 /home/student/snps_tools_target/vcs/U-2023.03/linux64/lib/libsnpsmalloc.so
+1677385055 /home/student/snps_tools_target/vcs/U-2023.03/linux64/lib/libvfs.so
+1794033744 simv.daidir
+-1 partitionlib

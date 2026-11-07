@@ -1,0 +1,6 @@
+Command exited with non-zero status 127
+{"vcs1":{"timestamp_begin":1794027899.159382194, "rt":0.00, "ut":0.00, "st":0.00}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1794027898.967695351}
+{"VCS_COMP_START_TIME": 1794027898.967695351}
+{"VCS_COMP_END_TIME": 1794027899.181374824}
+{"VCS_USER_OPTIONS": "-sverilog -kdb -debug_access+all -lca -timescale=1ns/1ps +define+DUMP_FSDB -f ../tb/filelist.f -top tb_neuroedge_soc -l vcs_compile.log"}

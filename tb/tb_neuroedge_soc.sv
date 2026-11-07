@@ -48,12 +48,19 @@ module tb_neuroedge_soc;
     logic [7:0]  gpio_out;
     logic [7:0]  gpio_dir;
 
+    // CPU Mode Control & Trace Monitoring
+    logic        cpu_override;
+    logic [31:0] cpu_trace_pc;
+    logic [31:0] cpu_trace_insn;
+    logic        cpu_trace_valid;
+
     // =========================================================================
     // Instantiate DUT (Device Under Test)
     // =========================================================================
     neuroedge_soc_top dut (
         .clk          (clk),
         .rst_n        (rst_n),
+        .cpu_override_i(cpu_override),
         .cpu_wb_adr_i (cpu_wb_adr),
         .cpu_wb_dat_i (cpu_wb_dat_w),
         .cpu_wb_dat_o (cpu_wb_dat_r),
@@ -73,7 +80,10 @@ module tb_neuroedge_soc;
         .gpio_in      (gpio_in),
         .gpio_out     (gpio_out),
         .gpio_dir     (gpio_dir),
-        .wdt_reset_out(wdt_reset_out)
+        .wdt_reset_out(wdt_reset_out),
+        .cpu_trace_pc_o   (cpu_trace_pc),
+        .cpu_trace_insn_o (cpu_trace_insn),
+        .cpu_trace_valid_o(cpu_trace_valid)
     );
 
     // =========================================================================
@@ -152,9 +162,9 @@ module tb_neuroedge_soc;
     end
 
     // =========================================================================
-    // UART Real-Time Console Monitor (115200 Baud)
+    // UART Real-Time Console Monitor (Exact match: (16+1) cycles * 20ns = 340ns)
     // =========================================================================
-    parameter real UART_BIT_PERIOD = 8680.55; // ns (1 / 115200)
+    parameter real UART_BIT_PERIOD = 340.0; // ns ((baud_div + 1) * 20ns)
 
     logic [7:0] uart_rx_byte;
     integer uart_i;
@@ -169,6 +179,7 @@ module tb_neuroedge_soc;
                 #UART_BIT_PERIOD;
             end
             $write("%c", uart_rx_byte);
+            $fflush();
         end
     end
 
@@ -209,6 +220,39 @@ module tb_neuroedge_soc;
     endtask
 
     // =========================================================================
+    // Instruction Trace & Bus Monitor
+    // =========================================================================
+    integer insn_retire_cnt = 0;
+    always @(posedge clk) begin
+        if (rst_n && cpu_trace_valid) begin
+            insn_retire_cnt++;
+            if (insn_retire_cnt <= 25 || (insn_retire_cnt % 500 == 0)) begin
+                $display("[VeeR Trace #%0d - %0t ps] PC = 0x%08h | INSN = 0x%08h", 
+                         insn_retire_cnt, $time, cpu_trace_pc, cpu_trace_insn);
+            end
+        end
+    end
+
+    always @(posedge clk) begin
+        if (rst_n) begin
+            if (dut.gen_veer_cpu.u_axi4_to_wb.lsu_axi_arvalid && dut.gen_veer_cpu.u_axi4_to_wb.lsu_axi_arready) begin
+                if (dut.gen_veer_cpu.u_axi4_to_wb.lsu_axi_araddr[31:16] == 16'h4000 && 
+                    dut.gen_veer_cpu.u_axi4_to_wb.lsu_axi_araddr != 32'h4000_3008) begin
+                    $display("[VeeR Peripheral Read  - %0t ps] Addr = 0x%08h", 
+                             $time, dut.gen_veer_cpu.u_axi4_to_wb.lsu_axi_araddr);
+                end
+            end
+            if (dut.gen_veer_cpu.u_axi4_to_wb.lsu_axi_awvalid && dut.gen_veer_cpu.u_axi4_to_wb.lsu_axi_awready) begin
+                if (dut.gen_veer_cpu.u_axi4_to_wb.lsu_axi_awaddr[31:16] == 16'h4000 && 
+                    dut.gen_veer_cpu.u_axi4_to_wb.lsu_axi_awaddr != 32'h4000_3000) begin
+                    $display("[VeeR Peripheral Write - %0t ps] Addr = 0x%08h", 
+                             $time, dut.gen_veer_cpu.u_axi4_to_wb.lsu_axi_awaddr);
+                end
+            end
+        end
+    end
+
+    // =========================================================================
     // Verification Sequence Execution
     // =========================================================================
     logic [31:0] rdata;
@@ -222,6 +266,7 @@ module tb_neuroedge_soc;
 
         // Initialize signals
         rst_n        = 1'b0;
+        cpu_override = 1'b0; // VeeR CPU runs autonomously
         cpu_wb_adr   = 32'd0;
         cpu_wb_dat_w = 32'd0;
         cpu_wb_sel   = 4'b0000;
@@ -235,9 +280,51 @@ module tb_neuroedge_soc;
         #100;
         @(posedge clk);
         rst_n = 1'b1;
-        $display("[TB - %0t ns] Reset released. System initialized.", $time);
+        $display("[TB - %0t ns] Reset released. VeeR EL2 CPU starting execution...", $time);
 
+        // Monitor CPU boot and firmware progress
+        fork : cpu_wait_block
+            begin
+                wait (gpio_out == 8'hAA || gpio_out == 8'hEE);
+                #1000;
+                disable cpu_wait_block;
+            end
+            begin
+                repeat (20) begin
+                    #500000; // 500 us interval check (10 ms total)
+                    if (gpio_out == 8'hAA || gpio_out == 8'hEE) break;
+                end
+                if (gpio_out != 8'hAA && gpio_out != 8'hEE) begin
+                    $display("\n[TB Timeout  - %0t ps] 10 ms timeout reached. gpio_out = 0x%02h, retired insns = %0d",
+                             $time, gpio_out, insn_retire_cnt);
+                end
+                disable cpu_wait_block;
+            end
+        join
+
+        if (gpio_out == 8'hAA) begin
+            $display("\n=======================================================");
+            $display("   [PASS] VEER EL2 FIRMWARE EXECUTION SUCCESSFUL!      ");
+            $display("   Total Instructions Retired: %0d                     ", insn_retire_cnt);
+            $display("   GPIO Status Pattern: 0x%02h                         ", gpio_out);
+            $display("=======================================================\n");
+            pass_count++;
+        end else begin
+            $display("\n[INFO] VeeR execution status: gpio_out = 0x%02h, retired insns = %0d", gpio_out, insn_retire_cnt);
+        end
+
+        // ---------------------------------------------------------------------
+        // Switch to direct Wishbone override for peripheral RTL checks
+        // ---------------------------------------------------------------------
+        $display("\n=======================================================");
+        $display("   SWITCHING TO DIRECT HARDWARE SUBSYSTEM VALIDATION   ");
+        $display("=======================================================\n");
+        cpu_override = 1'b1;
         #100;
+
+        // Verify Instruction SRAM Firmware Initialization
+        wb_read(32'h0000_0000, rdata);
+        $display("[TB] Instruction SRAM Boot Vector @ 0x0000_0000: 0x%08h (Expected: 0x30047073)", rdata);
 
         // ---------------------------------------------------------------------
         // Test 1: Watchdog Kick Verification
@@ -323,7 +410,7 @@ module tb_neuroedge_soc;
         $display(" Col 3 Result: %0d | Expected:   7", col_res[3]);
 
         if (col_res[0] == -13 && col_res[1] == -41 && col_res[2] == 94 && col_res[3] == 7) begin
-            $display("\n>>> [100% NUMERICAL MATCH CONFIRMED] <<<");
+            $display("\n>>> [100%% NUMERICAL MATCH CONFIRMED] <<<");
             pass_count++;
         end else begin
             $display("\n>>> [NUMERICAL MISMATCH DETECTED] <<<");

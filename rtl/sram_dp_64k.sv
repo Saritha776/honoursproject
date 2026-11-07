@@ -49,7 +49,7 @@ module sram_dp_64k #(
     end
 
     // Port A Operation
-    always_ff @(posedge clk or negedge rst_n) begin
+    always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             a_wb_ack_o <= 1'b0;
             a_wb_dat_o <= 32'h0000_0000;
@@ -71,7 +71,7 @@ module sram_dp_64k #(
     end
 
     // Port B Operation
-    always_ff @(posedge clk or negedge rst_n) begin
+    always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             b_wb_ack_o <= 1'b0;
             b_wb_dat_o <= 32'h0000_0000;

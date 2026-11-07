@@ -10,7 +10,7 @@ CC      = $(CROSS_COMPILE)gcc
 OBJCOPY = $(CROSS_COMPILE)objcopy
 OBJDUMP = $(CROSS_COMPILE)objdump
 
-CFLAGS  = -march=rv32imc -mabi=ilp32 -O2 -g -Wall -Wextra \
+CFLAGS  = -march=rv32imc_zicsr -mabi=ilp32 -O2 -g -Wall -Wextra \
           -ffreestanding -nostdlib -fno-builtin \
           -I.
 
