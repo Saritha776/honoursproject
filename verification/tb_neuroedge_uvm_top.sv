@@ -97,12 +97,7 @@ module tb_neuroedge_uvm_top;
     // UVM Config DB Setup & Simulation Entry
     // =========================================================================
     initial begin
-        // Pass single GPIO virtual interface into UVM Config DB
-        uvm_config_db#(virtual gpio_if)::set(null, "*.gpio_agent_inst*", "vif", u_gpio_if);
-        uvm_config_db#(virtual gpio_if)::set(null, "*.agent*", "vif", u_gpio_if);
-        uvm_config_db#(virtual gpio_if)::set(null, "uvm_test_top", "vif", u_gpio_if);
-        uvm_config_db#(virtual gpio_if)::set(null, "uvm_test_top", "gpio_vif", u_gpio_if);
-        uvm_config_db#(virtual gpio_if)::set(null, "*", "gpio_vif", u_gpio_if);
+        // Pass single GPIO virtual interface into UVM Config DB strictly ONE time
         uvm_config_db#(virtual gpio_if)::set(null, "*", "vif", u_gpio_if);
 
         // FSDB Waveform Dumping: captures single GPIO VIP and DUT GPIO clearly
