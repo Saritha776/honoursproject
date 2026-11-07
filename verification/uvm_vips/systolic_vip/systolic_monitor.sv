@@ -86,24 +86,27 @@ class systolic_monitor extends uvm_monitor;
 
     task monitor_completion();
         systolic_item item;
+        bit prev_irq = 1'b0;
         forever begin
             @(posedge vif.clk);
-            // Detect array completion pulse
-            if (vif.rst_n && vif.array_irq) begin
-                // Give 1 cycle for result register capture
-                @(posedge vif.clk);
-                item = systolic_item::type_id::create("mon_systolic_item");
-                item.weights     = shadow_weights;
-                item.activations = shadow_activations;
-                item.compute_golden();
+            if (vif.rst_n) begin
+                if (vif.array_irq && !prev_irq) begin
+                    item = systolic_item::type_id::create("mon_systolic_item");
+                    item.weights     = shadow_weights;
+                    item.activations = shadow_activations;
+                    item.compute_golden();
 
-                item.actual_results[0] = vif.res_out[0];
-                item.actual_results[1] = vif.res_out[1];
-                item.actual_results[2] = vif.res_out[2];
-                item.actual_results[3] = vif.res_out[3];
+                    item.actual_results[0] = vif.res_out[0];
+                    item.actual_results[1] = vif.res_out[1];
+                    item.actual_results[2] = vif.res_out[2];
+                    item.actual_results[3] = vif.res_out[3];
 
-                `uvm_info(get_type_name(), $sformatf("Monitored Completion:\n%s", item.convert2string()), UVM_LOW)
-                item_collected_port.write(item);
+                    `uvm_info(get_type_name(), $sformatf("Monitored Completion:\n%s", item.convert2string()), UVM_LOW)
+                    item_collected_port.write(item);
+                end
+                prev_irq = vif.array_irq;
+            end else begin
+                prev_irq = 1'b0;
             end
         end
     endtask

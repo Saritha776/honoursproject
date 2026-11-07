@@ -1,6 +1,6 @@
-<session version="1.1" release="U-2023.03" timestp="2026-11-07 07:59:30 GMT">
+<session version="1.1" release="U-2023.03" timestp="2026-11-07 08:59:20 GMT">
   <info>
-    <attr name="datetime" value="Sat Nov  7 13:29:32 2026
+    <attr name="datetime" value="Sat Nov  7 14:29:22 2026
 "/>
     <attr name="command" value="urg -dir neuroedge_cov.vdb -report /home/student/Documents/honoursproject/honoursproject/verification/coverage_report -format text"/>
   </info>
@@ -13,28 +13,28 @@
   <old_coverage>
   <scope type="top" name="top">
     <metric name="Assert" value="13/17" />
-    <metric name="Group" value="56.1839%" />
+    <metric name="Group" value="100%" />
   </scope>
   <scope type="instance" name="top">
   </scope>
   <scope type="group" name="top">
-    <scope type="group" name="spi_flash_pkg::spi_flash_coverage::cg_spi_flash">
-      <metric name="Group" value="0%" />
-    </scope>
-    <scope type="group" name="systolic_pkg::systolic_coverage::cg_systolic">
-      <metric name="Group" value="50%" />
-    </scope>
     <scope type="group" name="axi4_pkg::axi4_coverage::cg_axi4">
-      <metric name="Group" value="69.6428%" />
-    </scope>
-    <scope type="group" name="wb_pkg::wb_coverage::cg_wb">
-      <metric name="Group" value="70.2381%" />
-    </scope>
-    <scope type="group" name="uart_pkg::uart_coverage::cg_uart">
-      <metric name="Group" value="72.2222%" />
+      <metric name="Group" value="100%" />
     </scope>
     <scope type="group" name="gpio_pkg::gpio_coverage::cg_gpio">
-      <metric name="Group" value="75%" />
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="spi_flash_pkg::spi_flash_coverage::cg_spi_flash">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="systolic_pkg::systolic_coverage::cg_systolic">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="uart_pkg::uart_coverage::cg_uart">
+      <metric name="Group" value="100%" />
+    </scope>
+    <scope type="group" name="wb_pkg::wb_coverage::cg_wb">
+      <metric name="Group" value="100%" />
     </scope>
   </scope>
   <scope type="assert" name="Statistics">

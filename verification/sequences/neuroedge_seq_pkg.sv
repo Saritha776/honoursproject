@@ -24,6 +24,7 @@ package neuroedge_seq_pkg;
     `include "neuroedge_peripheral_vseq.sv"
     `include "neuroedge_systolic_vseq.sv"
     `include "neuroedge_uart_vseq.sv"
+    `include "neuroedge_uart_fifo_vseq.sv"
     `include "neuroedge_error_resp_vseq.sv"
     `include "neuroedge_concurrent_vseq.sv"
 

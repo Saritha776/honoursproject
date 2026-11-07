@@ -80,6 +80,7 @@ module uart_16550 (
     logic [3:0]  rx_bit_idx;
     logic [7:0]  rx_shift_reg;
     logic        rx_busy;
+    logic        rx_push_strobe;
 
     // Wishbone Read/Write
     always_ff @(posedge clk or negedge rst_n) begin
@@ -90,6 +91,9 @@ module uart_16550 (
             rx_rd_ptr   <= 3'd0;
             wb_ack_o    <= 1'b0;
             wb_dat_o    <= 32'h0000_0000;
+            for (int i = 0; i < 8; i++) begin
+                tx_fifo[i] <= 8'h00;
+            end
         end else begin
             wb_ack_o <= 1'b0;
 
@@ -134,10 +138,10 @@ module uart_16550 (
     end
 
     // FIFO Counters
-    wire tx_push = (wb_stb_i && wb_cyc_i && wb_we_i && (wb_adr_i[7:0] == REG_UART_TX_DATA) && !tx_fifo_full);
+    wire tx_push = (wb_stb_i && wb_cyc_i && wb_we_i && !wb_ack_o && (wb_adr_i[7:0] == REG_UART_TX_DATA) && !tx_fifo_full);
     wire tx_pop  = (!tx_busy && !tx_fifo_empty);
-    wire rx_push = (!rx_busy && rx_sample_cnt == 4'd15 && rx_bit_idx == 4'd9 && !rx_fifo_full);
-    wire rx_pop  = (wb_stb_i && wb_cyc_i && !wb_we_i && (wb_adr_i[7:0] == REG_UART_RX_DATA) && !rx_fifo_empty);
+    wire rx_push = rx_push_strobe;
+    wire rx_pop  = (wb_stb_i && wb_cyc_i && !wb_we_i && !wb_ack_o && (wb_adr_i[7:0] == REG_UART_RX_DATA) && !rx_fifo_empty);
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -199,8 +203,13 @@ module uart_16550 (
             rx_shift_reg   <= 8'h00;
             rx_wr_ptr      <= 3'd0;
             rx_overrun_set <= 1'b0;
+            rx_push_strobe <= 1'b0;
+            for (int i = 0; i < 8; i++) begin
+                rx_fifo[i] <= 8'h00;
+            end
         end else begin
             rx_overrun_set <= 1'b0;
+            rx_push_strobe <= 1'b0;
             if (!rx_busy) begin
                 if (!rx_sync2) begin // Detected Start bit falling edge
                     rx_busy       <= 1'b1;
@@ -227,6 +236,7 @@ module uart_16550 (
                             if (!rx_fifo_full) begin
                                 rx_fifo[rx_wr_ptr] <= rx_shift_reg;
                                 rx_wr_ptr          <= rx_wr_ptr + 1'b1;
+                                rx_push_strobe     <= 1'b1;
                             end else begin
                                 rx_overrun_set <= 1'b1;
                             end

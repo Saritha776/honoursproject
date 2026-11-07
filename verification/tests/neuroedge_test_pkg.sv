@@ -25,6 +25,7 @@ package neuroedge_test_pkg;
     `include "neuroedge_systolic_test.sv"
     `include "neuroedge_wb_access_test.sv"
     `include "neuroedge_uart_test.sv"
+    `include "neuroedge_uart_fifo_test.sv"
     `include "neuroedge_concurrent_test.sv"
     `include "neuroedge_error_resp_test.sv"
 

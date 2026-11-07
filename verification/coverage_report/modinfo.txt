@@ -25,7 +25,7 @@ Total            3     1         33.33   1                 33.33
 Assertion Details
 
 Name                                                  Attempts Real Successes Failures Incomplete 
-\uvm_component_name_check_visitor::visit .unnamed$$_0 948      948            0        0          
+\uvm_component_name_check_visitor::visit .unnamed$$_0 2528     2528           0        0          
 \uvm_reg_map::do_read .unnamed$$_0.unnamed$$_1        0        0              0        0          
 \uvm_reg_map::do_write .unnamed$$_0.unnamed$$_1       0        0              0        0          
 
@@ -59,10 +59,10 @@ Total            4     4         100.00  3                 75.00
 Assertion Details
 
 Name                  Attempts Real Successes Failures Incomplete 
-assert_arvalid_stable 410404   116964         0        6          
-assert_awvalid_stable 410404   4509           0        0          
-assert_rvalid_stable  410404   0              0        0          
-assert_wvalid_stable  410404   4509           0        0          
+assert_arvalid_stable 425544   128927         0        15         
+assert_awvalid_stable 425544   4538           0        0          
+assert_rvalid_stable  425544   0              0        0          
+assert_wvalid_stable  425544   4538           0        0          
 
 
 -------------------------------------------------------------------------------
@@ -116,10 +116,10 @@ Total            4     4         100.00  1                 25.00
 Assertion Details
 
 Name                  Attempts Real Successes Failures Incomplete 
-assert_arvalid_stable 205202   101576         0        6          
-assert_awvalid_stable 205202   0              0        0          
-assert_rvalid_stable  205202   0              0        0          
-assert_wvalid_stable  205202   0              0        0          
+assert_arvalid_stable 212772   114611         0        15         
+assert_awvalid_stable 212772   0              0        0          
+assert_rvalid_stable  212772   0              0        0          
+assert_wvalid_stable  212772   0              0        0          
 
 
 -------------------------------------------------------------------------------
@@ -173,10 +173,10 @@ Total            4     4         100.00  3                 75.00
 Assertion Details
 
 Name                  Attempts Real Successes Failures Incomplete 
-assert_arvalid_stable 205202   15388          0        0          
-assert_awvalid_stable 205202   4509           0        0          
-assert_rvalid_stable  205202   0              0        0          
-assert_wvalid_stable  205202   4509           0        0          
+assert_arvalid_stable 212772   14316          0        0          
+assert_awvalid_stable 212772   4538           0        0          
+assert_rvalid_stable  212772   0              0        0          
+assert_wvalid_stable  212772   4538           0        0          
 
 
 ===============================================================================
@@ -207,7 +207,7 @@ Total            1     1         100.00  1                 100.00
 Assertion Details
 
 Name                  Attempts Real Successes Failures Incomplete 
-assert_gpio_out_known 205202   205172         0        0          
+assert_gpio_out_known 212772   212692         0        0          
 
 
 -------------------------------------------------------------------------------
@@ -276,7 +276,7 @@ Total            1     1         100.00  1                 100.00
 Assertion Details
 
 Name                Attempts Real Successes Failures Incomplete 
-assert_spi_cs_known 205202   205172         0        0          
+assert_spi_cs_known 212772   212692         0        0          
 
 
 -------------------------------------------------------------------------------
@@ -345,7 +345,7 @@ Total            1     1         100.00  1                 100.00
 Assertion Details
 
 Name                   Attempts Real Successes Failures Incomplete 
-assert_array_irq_known 205202   205172         0        0          
+assert_array_irq_known 212772   212692         0        0          
 
 
 -------------------------------------------------------------------------------
@@ -414,8 +414,8 @@ Total            2     2         100.00  2                 100.00
 Assertion Details
 
 Name                      Attempts Real Successes Failures Incomplete 
-assert_uart_start_bit     205202   3516           0        0          
-assert_uart_tx_reset_idle 205202   6              0        0          
+assert_uart_start_bit     212772   3358           0        0          
+assert_uart_tx_reset_idle 212772   16             0        0          
 
 
 -------------------------------------------------------------------------------
@@ -484,10 +484,10 @@ Total            4     4         100.00  4                 100.00
 Assertion Details
 
 Name                              Attempts Real Successes Failures Incomplete 
-assert_ack_err_mutually_exclusive 205202   205172         0        0          
-assert_master_signals_stable      205202   133            0        0          
-assert_stb_implies_cyc            205202   202            0        0          
-assert_timeout_guard              205202   69             0        0          
+assert_ack_err_mutually_exclusive 212772   212692         0        0          
+assert_master_signals_stable      212772   1210           0        0          
+assert_stb_implies_cyc            212772   2274           0        0          
+assert_timeout_guard              212772   1064           0        0          
 
 
 -------------------------------------------------------------------------------
