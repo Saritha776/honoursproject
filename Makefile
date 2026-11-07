@@ -33,11 +33,11 @@ regression:
 
 wave-sim:
 	@echo ">>> Launching Synopsys Verdi for Non-UVM Simulation Waveform..."
-	verdi -ssf sim/neuroedge_sim.fsdb -simv sim/simv &
+	verdi -ssf sim/neuroedge_sim.fsdb -simv sim/simv -sswr verification/neuroedge_soc_waves.rc &
 
 wave-uvm:
 	@echo ">>> Launching Synopsys Verdi for UVM Regression Waveform..."
-	verdi -ssf verification/sim/neuroedge_uvm_sim.fsdb &
+	verdi -ssf verification/sim/neuroedge_uvm_sim.fsdb -simv verification/sim/simv_uvm -sswr verification/neuroedge_waves.rc &
 
 coverage:
 	@echo ">>> NeuroEdge SoC Functional & Code Coverage Report:"

@@ -1,0 +1,169 @@
+; ==============================================================================
+; Verdi nWave Signal Configuration File
+; Project: NeuroEdge RISC-V SoC with Systolic Array AI Accelerator
+; Target: UVM Simulation Waveform (tb_neuroedge_soc)
+; Radix: Addresses & Data = Hexadecimal | Systolic Results = 2's Complement Signed Decimal
+; ==============================================================================
+
+; Window Layout
+viewPort 0 28 1280 720 340 120
+
+; Signal spacing & time unit
+signalSpacing 5
+windowTimeUnit 1ps
+
+; Waveform Viewport Range
+zoom 0.000000 3350000.000000 1p
+cursor 0.000000
+marker 0.000000
+
+curSTATUS ByChange
+
+; ------------------------------------------------------------------------------
+; Group 1: CPU Execution
+; ------------------------------------------------------------------------------
+addGroup "CPU Execution"
+addSignal -h 15 /tb_neuroedge_soc/clk
+addSignal -h 15 /tb_neuroedge_soc/rst_n
+addSignal -h 15 /tb_neuroedge_soc/dut/cpu_trace_valid_o
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/cpu_trace_pc_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/cpu_trace_insn_o[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/gen_veer_cpu/u_cpu/trace_rv_i_valid_ip
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/gen_veer_cpu/u_cpu/trace_rv_i_address_ip[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/gen_veer_cpu/u_cpu/trace_rv_i_insn_ip[31:0]
+
+; ------------------------------------------------------------------------------
+; Group 2: AXI4
+; ------------------------------------------------------------------------------
+addGroup "AXI4"
+addSignal -h 15 /tb_neuroedge_soc/dut/ifu_axi_arvalid
+addSignal -h 15 /tb_neuroedge_soc/dut/ifu_axi_arready
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/ifu_axi_araddr[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/ifu_axi_rvalid
+addSignal -h 15 /tb_neuroedge_soc/dut/ifu_axi_rready
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/ifu_axi_rdata[63:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/lsu_axi_awvalid
+addSignal -h 15 /tb_neuroedge_soc/dut/lsu_axi_awready
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/lsu_axi_awaddr[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/lsu_axi_wvalid
+addSignal -h 15 /tb_neuroedge_soc/dut/lsu_axi_wready
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/lsu_axi_wdata[63:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/lsu_axi_wstrb[7:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/lsu_axi_bvalid
+addSignal -h 15 /tb_neuroedge_soc/dut/lsu_axi_bready
+addSignal -h 15 /tb_neuroedge_soc/dut/lsu_axi_arvalid
+addSignal -h 15 /tb_neuroedge_soc/dut/lsu_axi_arready
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/lsu_axi_araddr[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/lsu_axi_rvalid
+addSignal -h 15 /tb_neuroedge_soc/dut/lsu_axi_rready
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/lsu_axi_rdata[63:0]
+
+; ------------------------------------------------------------------------------
+; Group 3: Wishbone
+; ------------------------------------------------------------------------------
+addGroup "Wishbone"
+addSignal -h 15 /tb_neuroedge_soc/dut/u_interconnect/m0_wb_cyc_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_interconnect/m0_wb_stb_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_interconnect/m0_wb_we_i
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_interconnect/m0_wb_adr_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_interconnect/m0_wb_dat_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_interconnect/m0_wb_dat_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_interconnect/m0_wb_sel_i[3:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/u_interconnect/m0_wb_ack_o
+addSignal -h 15 /tb_neuroedge_soc/dut/u_interconnect/m0_wb_err_o
+addSignal -h 15 -UNSIGNED -BIN /tb_neuroedge_soc/dut/u_interconnect/grant[1:0]
+
+; ------------------------------------------------------------------------------
+; Group 4: SRAM
+; ------------------------------------------------------------------------------
+addGroup "SRAM"
+addSignal -h 15 /tb_neuroedge_soc/dut/u_isram/wb_cyc_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_isram/wb_stb_i
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_isram/wb_adr_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_isram/wb_dat_o[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/u_isram/wb_ack_o
+addSignal -h 15 /tb_neuroedge_soc/dut/u_dsram/a_wb_cyc_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_dsram/a_wb_stb_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_dsram/a_wb_we_i
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_dsram/a_wb_adr_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_dsram/a_wb_dat_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_dsram/a_wb_dat_o[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/u_dsram/a_wb_ack_o
+addSignal -h 15 /tb_neuroedge_soc/dut/u_dsram/b_wb_cyc_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_dsram/b_wb_stb_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_dsram/b_wb_we_i
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_dsram/b_wb_adr_i[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/u_dsram/b_wb_ack_o
+
+; ------------------------------------------------------------------------------
+; Group 5: Systolic Array
+; ------------------------------------------------------------------------------
+addGroup "Systolic Array"
+addSignal -h 15 /tb_neuroedge_soc/dut/u_systolic_array/wb_cyc_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_systolic_array/wb_stb_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_systolic_array/wb_we_i
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_systolic_array/wb_adr_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_systolic_array/wb_dat_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_systolic_array/wb_dat_o[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/u_systolic_array/wb_ack_o
+addSignal -h 15 /tb_neuroedge_soc/dut/u_systolic_array/dma_act_valid
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_systolic_array/dma_act_data[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/u_systolic_array/dma_wgt_valid
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_systolic_array/dma_wgt_data[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/u_systolic_array/array_irq
+addSignal -h 15 /tb_neuroedge_soc/dut/u_systolic_array/reg_en
+addSignal -h 15 /tb_neuroedge_soc/dut/u_systolic_array/reg_start
+addSignal -h 15 /tb_neuroedge_soc/dut/u_systolic_array/reg_busy
+addSignal -h 15 /tb_neuroedge_soc/dut/u_systolic_array/reg_done
+addSignal -h 15 /tb_neuroedge_soc/dut/u_systolic_array/reg_overflow
+addSignal -h 15 -2COMP -DEC /tb_neuroedge_soc/dut/u_systolic_array/res_reg[0][31:0]
+addSignal -h 15 -2COMP -DEC /tb_neuroedge_soc/dut/u_systolic_array/res_reg[1][31:0]
+addSignal -h 15 -2COMP -DEC /tb_neuroedge_soc/dut/u_systolic_array/res_reg[2][31:0]
+addSignal -h 15 -2COMP -DEC /tb_neuroedge_soc/dut/u_systolic_array/res_reg[3][31:0]
+
+; ------------------------------------------------------------------------------
+; Group 6: UART
+; ------------------------------------------------------------------------------
+addGroup "UART"
+addSignal -h 15 /tb_neuroedge_soc/dut/u_uart/wb_cyc_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_uart/wb_stb_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_uart/wb_we_i
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_uart/wb_adr_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_uart/wb_dat_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_uart/wb_dat_o[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/u_uart/wb_ack_o
+addSignal -h 15 /tb_neuroedge_soc/dut/u_uart/uart_tx
+addSignal -h 15 /tb_neuroedge_soc/dut/u_uart/uart_rx
+addSignal -h 15 /tb_neuroedge_soc/dut/u_uart/uart_irq
+addSignal -h 15 -UNSIGNED -UDEC /tb_neuroedge_soc/dut/u_uart/tx_count[3:0]
+addSignal -h 15 -UNSIGNED -UDEC /tb_neuroedge_soc/dut/u_uart/rx_count[3:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/u_uart/tx_fifo_full
+addSignal -h 15 /tb_neuroedge_soc/dut/u_uart/tx_fifo_empty
+addSignal -h 15 /tb_neuroedge_soc/dut/u_uart/rx_fifo_full
+addSignal -h 15 /tb_neuroedge_soc/dut/u_uart/rx_fifo_empty
+addSignal -h 15 /tb_neuroedge_soc/dut/u_uart/rx_push_strobe
+
+; ------------------------------------------------------------------------------
+; Group 7: GPIO/Watchdog
+; ------------------------------------------------------------------------------
+addGroup "GPIO/Watchdog"
+addSignal -h 15 /tb_neuroedge_soc/dut/u_gpio/wb_cyc_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_gpio/wb_stb_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_gpio/wb_we_i
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_gpio/wb_adr_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_gpio/wb_dat_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_gpio/wb_dat_o[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/u_gpio/wb_ack_o
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_gpio/gpio_in[7:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_gpio/gpio_out[7:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_gpio/gpio_dir_o[7:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/u_gpio/gpio_irq
+addSignal -h 15 /tb_neuroedge_soc/dut/u_wdt/wb_cyc_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_wdt/wb_stb_i
+addSignal -h 15 /tb_neuroedge_soc/dut/u_wdt/wb_we_i
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_wdt/wb_adr_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_wdt/wb_dat_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_neuroedge_soc/dut/u_wdt/wb_dat_o[31:0]
+addSignal -h 15 /tb_neuroedge_soc/dut/u_wdt/wb_ack_o
+addSignal -h 15 /tb_neuroedge_soc/dut/u_wdt/wdt_irq
+addSignal -h 15 /tb_neuroedge_soc/dut/u_wdt/wdt_reset_out
