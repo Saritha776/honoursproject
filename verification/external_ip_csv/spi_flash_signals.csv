@@ -1,0 +1,6 @@
+clk,input,1
+rst_n,input,1
+sclk,output,1
+mosi,output,1
+miso,input,1
+cs_n,output,1

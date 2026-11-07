@@ -35,6 +35,11 @@ class neuroedge_uart_vseq extends neuroedge_base_vseq;
         `uvm_info(get_type_name(), "=== [Step 3] Verifying Received Byte in UART Hardware ===", UVM_LOW)
         wb_read(32'h4000_3004, rdata);
         `uvm_info(get_type_name(), $sformatf("UART RX Wishbone Readback: 0x%02h", rdata[7:0]), UVM_LOW)
+        if (rdata[7:0] == 8'h4B) begin
+            `uvm_info(get_type_name(), "★ UART Wishbone Readback Verified: 0x4B ('K') matches transmitted byte! ★", UVM_NONE)
+        end else begin
+            `uvm_error(get_type_name(), $sformatf("UART Wishbone Readback Mismatch: Got 0x%02h, Expected 0x4B", rdata[7:0]))
+        end
         if (uart_vif != null) begin
             `uvm_info(get_type_name(), $sformatf("UART RX Hardware Shift Register: 0x%02h ('%c')",
                       uart_vif.rx_shift_reg_probe, uart_vif.rx_shift_reg_probe), UVM_LOW)
@@ -47,6 +52,10 @@ class neuroedge_uart_vseq extends neuroedge_base_vseq;
 
         `uvm_info(get_type_name(), "=== [Step 4] Transmitting Test Byte 'U' (0x55) via UART TX FIFO (0x4000_3000) ===", UVM_LOW)
         wb_write(32'h4000_3000, 32'h0000_0055);
+        #9000ns;
+
+        `uvm_info(get_type_name(), "=== [Step 5] Transmitting Extended Byte (0xA5) to Exercise Upper ASCII Range ===", UVM_LOW)
+        wb_write(32'h4000_3000, 32'h0000_00A5);
         #9000ns;
     endtask
 

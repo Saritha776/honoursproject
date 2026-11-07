@@ -1,18 +1,18 @@
 Dashboard
 
-Date: Sat Nov  7 13:29:32 2026
+Date: Sat Nov  7 14:29:22 2026
 
 User: student
 
 Version: U-2023.03
 Command line: urg -dir neuroedge_cov.vdb -report /home/student/Documents/honoursproject/honoursproject/verification/coverage_report -format text 
 
-Number of tests: 6
+Number of tests: 16
 
 -------------------------------------------------------------------------------
 Total Coverage Summary 
 SCORE  ASSERT GROUP  
- 66.33  76.47  56.18 
+ 88.24  76.47 100.00 
 
 
 -------------------------------------------------------------------------------
@@ -36,5 +36,5 @@ SCORE  ASSERT
 -------------------------------------------------------------------------------
 Total Groups Coverage Summary 
 SCORE  WEIGHT 
- 56.18 1      
+100.00 1      
 

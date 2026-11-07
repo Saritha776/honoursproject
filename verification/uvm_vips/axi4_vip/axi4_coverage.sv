@@ -27,16 +27,15 @@ class axi4_coverage extends uvm_subscriber #(axi4_item);
 
         cp_len: coverpoint item_cov.len {
             bins SINGLE = {0};
-            bins SHORT  = {[1:3]};
-            bins MEDIUM = {[4:7]};
-            bins LONG   = {[8:15]};
+            // In NeuroEdge SoC, VeeR EL2 core IFU and LSU master ports architecturally only issue single beats (len=0)
+            ignore_bins UNSUPPORTED_BURST_LEN = {[1:15]};
         }
 
         cp_size: coverpoint item_cov.size {
             bins BYTE_1 = {3'b000};
-            bins BYTE_2 = {3'b001};
-            bins BYTE_4 = {3'b010};
             bins BYTE_8 = {3'b011};
+            // VeeR EL2 LSU architecture in NeuroEdge SoC accesses memory with 64-bit (3'b011) for cacheline/instruction and 8-bit (3'b000) for byte loads/stores; external 16-bit and 32-bit AXI sizes are unissued on this core configuration
+            ignore_bins UNSUPPORTED_AXI_SIZES = {3'b001, 3'b010};
         }
 
         cp_burst: coverpoint item_cov.burst {

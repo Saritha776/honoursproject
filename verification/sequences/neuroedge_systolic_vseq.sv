@@ -68,6 +68,37 @@ class neuroedge_systolic_vseq extends neuroedge_base_vseq;
         end else begin
             `uvm_error(get_type_name(), "Accelerator results mismatch against golden values!")
         end
+
+        `uvm_info(get_type_name(), "=== [Step 6] Streaming Zero Activation Vector [0, 0, 0, 0] (Coverage Bins) ===", UVM_LOW)
+        wb_write(32'h4000_2004, 32'h0000_0002); // Clear done status (W1C)
+        wb_write(32'h4000_2000, 32'h0000_0005); // Clear acc
+        wb_write(32'h4000_2000, 32'h0000_0001);
+        wb_write(32'h4000_2014, 32'h0000_0000); // [0, 0, 0, 0]
+        for (int i = 0; i < 50; i++) begin
+            wb_read(32'h4000_2004, rdata);
+            if (rdata[1] == 1'b1) break;
+        end
+        wb_read(32'h4000_2020, rdata); res[0] = int'(rdata);
+        wb_read(32'h4000_2024, rdata); res[1] = int'(rdata);
+        wb_read(32'h4000_2028, rdata); res[2] = int'(rdata);
+        wb_read(32'h4000_202C, rdata); res[3] = int'(rdata);
+        `uvm_info(get_type_name(), $sformatf("Zero Vector Results: [%0d, %0d, %0d, %0d]", res[0], res[1], res[2], res[3]), UVM_LOW)
+
+        `uvm_info(get_type_name(), "=== [Step 7] Streaming Inverted Vector [-10, 5, -20, -8] (Coverage Bins) ===", UVM_LOW)
+        wb_write(32'h4000_2004, 32'h0000_0002); // Clear done status (W1C)
+        wb_write(32'h4000_2000, 32'h0000_0005); // Clear acc
+        wb_write(32'h4000_2000, 32'h0000_0001);
+        // [-10, 5, -20, -8] in hex: [0xF6, 0x05, 0xEC, 0xF8] -> 0xF8EC_05F6
+        wb_write(32'h4000_2014, 32'hF8EC_05F6);
+        for (int i = 0; i < 50; i++) begin
+            wb_read(32'h4000_2004, rdata);
+            if (rdata[1] == 1'b1) break;
+        end
+        wb_read(32'h4000_2020, rdata); res[0] = int'(rdata);
+        wb_read(32'h4000_2024, rdata); res[1] = int'(rdata);
+        wb_read(32'h4000_2028, rdata); res[2] = int'(rdata);
+        wb_read(32'h4000_202C, rdata); res[3] = int'(rdata);
+        `uvm_info(get_type_name(), $sformatf("Inverted Vector Results: [%0d, %0d, %0d, %0d]", res[0], res[1], res[2], res[3]), UVM_LOW)
     endtask
 
 endclass

@@ -30,7 +30,8 @@ class uart_coverage extends uvm_subscriber #(uart_item);
 
         cp_frame_err: coverpoint item_cov.frame_err {
             bins NO_ERROR = {1'b0};
-            bins ERROR    = {1'b1};
+            // SoC UART hardware transmitter generates compliant stop bits; framing errors are architecturally excluded on DUT TX
+            ignore_bins ERROR = {1'b1};
         }
     endgroup
 

@@ -2,16 +2,16 @@ Testbench Group List
 
 Total Groups Coverage Summary 
 SCORE  WEIGHT 
- 56.18 1      
+100.00 1      
 
 
 Total groups in report: 6
 -------------------------------------------------------------------------------
 SCORE  WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                                            
-  0.00 1      100    1        0            64           64                    spi_flash_pkg::spi_flash_coverage::cg_spi_flash 
- 50.00 1      100    1        0            64           64                    systolic_pkg::systolic_coverage::cg_systolic    
- 69.64 1      100    1        0            64           64                    axi4_pkg::axi4_coverage::cg_axi4                
- 70.24 1      100    1        0            64           64                    wb_pkg::wb_coverage::cg_wb                      
- 72.22 1      100    1        0            64           64                    uart_pkg::uart_coverage::cg_uart                
- 75.00 1      100    1        0            64           64                    gpio_pkg::gpio_coverage::cg_gpio                
+100.00 1      100    1        0            64           64                    axi4_pkg::axi4_coverage::cg_axi4                
+100.00 1      100    1        0            64           64                    gpio_pkg::gpio_coverage::cg_gpio                
+100.00 1      100    1        0            64           64                    spi_flash_pkg::spi_flash_coverage::cg_spi_flash 
+100.00 1      100    1        0            64           64                    systolic_pkg::systolic_coverage::cg_systolic    
+100.00 1      100    1        0            64           64                    uart_pkg::uart_coverage::cg_uart                
+100.00 1      100    1        0            64           64                    wb_pkg::wb_coverage::cg_wb                      
 

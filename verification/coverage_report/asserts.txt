@@ -30,33 +30,33 @@ Detail Report for Assertions
 
 Assertions Uncovered:
                        ASSERTIONS                       CATEGORY SEVERITY ATTEMPTS REAL SUCCESSES FAILURES INCOMPLETE
-tb_neuroedge_uvm_top.u_ifu_axi_if.assert_awvalid_stable        0        0   205202              0        0          0
-tb_neuroedge_uvm_top.u_ifu_axi_if.assert_rvalid_stable         0        0   205202              0        0          0
-tb_neuroedge_uvm_top.u_ifu_axi_if.assert_wvalid_stable         0        0   205202              0        0          0
-tb_neuroedge_uvm_top.u_lsu_axi_if.assert_rvalid_stable         0        0   205202              0        0          0
+tb_neuroedge_uvm_top.u_ifu_axi_if.assert_awvalid_stable        0        0   212772              0        0          0
+tb_neuroedge_uvm_top.u_ifu_axi_if.assert_rvalid_stable         0        0   212772              0        0          0
+tb_neuroedge_uvm_top.u_ifu_axi_if.assert_wvalid_stable         0        0   212772              0        0          0
+tb_neuroedge_uvm_top.u_lsu_axi_if.assert_rvalid_stable         0        0   212772              0        0          0
 uvm_pkg.\uvm_reg_map::do_read .unnamed$$_0.unnamed$$_1         0        0        0              0        0          0
 uvm_pkg.\uvm_reg_map::do_write .unnamed$$_0.unnamed$$_1        0        0        0              0        0          0
 
 Assertions Success:
                           ASSERTIONS                           CATEGORY SEVERITY ATTEMPTS REAL SUCCESSES FAILURES INCOMPLETE
-tb_neuroedge_uvm_top.u_gpio_if.assert_gpio_out_known                  0        0   205202         205172        0          0
-tb_neuroedge_uvm_top.u_ifu_axi_if.assert_arvalid_stable               0        0   205202         101576        0          6
-tb_neuroedge_uvm_top.u_lsu_axi_if.assert_arvalid_stable               0        0   205202          15388        0          0
-tb_neuroedge_uvm_top.u_lsu_axi_if.assert_awvalid_stable               0        0   205202           4509        0          0
-tb_neuroedge_uvm_top.u_lsu_axi_if.assert_wvalid_stable                0        0   205202           4509        0          0
-tb_neuroedge_uvm_top.u_spi_if.assert_spi_cs_known                     0        0   205202         205172        0          0
-tb_neuroedge_uvm_top.u_systolic_if.assert_array_irq_known             0        0   205202         205172        0          0
-tb_neuroedge_uvm_top.u_uart_if.assert_uart_start_bit                  0        0   205202           3516        0          0
-tb_neuroedge_uvm_top.u_uart_if.assert_uart_tx_reset_idle              0        0   205202              6        0          0
-tb_neuroedge_uvm_top.u_wb_if.assert_ack_err_mutually_exclusive        0        0   205202         205172        0          0
-tb_neuroedge_uvm_top.u_wb_if.assert_master_signals_stable             0        0   205202            133        0          0
-tb_neuroedge_uvm_top.u_wb_if.assert_stb_implies_cyc                   0        0   205202            202        0          0
-tb_neuroedge_uvm_top.u_wb_if.assert_timeout_guard                     0        0   205202             69        0          0
-uvm_pkg.\uvm_component_name_check_visitor::visit .unnamed$$_0         0        0      948            948        0          0
+tb_neuroedge_uvm_top.u_gpio_if.assert_gpio_out_known                  0        0   212772         212692        0          0
+tb_neuroedge_uvm_top.u_ifu_axi_if.assert_arvalid_stable               0        0   212772         114611        0         15
+tb_neuroedge_uvm_top.u_lsu_axi_if.assert_arvalid_stable               0        0   212772          14316        0          0
+tb_neuroedge_uvm_top.u_lsu_axi_if.assert_awvalid_stable               0        0   212772           4538        0          0
+tb_neuroedge_uvm_top.u_lsu_axi_if.assert_wvalid_stable                0        0   212772           4538        0          0
+tb_neuroedge_uvm_top.u_spi_if.assert_spi_cs_known                     0        0   212772         212692        0          0
+tb_neuroedge_uvm_top.u_systolic_if.assert_array_irq_known             0        0   212772         212692        0          0
+tb_neuroedge_uvm_top.u_uart_if.assert_uart_start_bit                  0        0   212772           3358        0          0
+tb_neuroedge_uvm_top.u_uart_if.assert_uart_tx_reset_idle              0        0   212772             16        0          0
+tb_neuroedge_uvm_top.u_wb_if.assert_ack_err_mutually_exclusive        0        0   212772         212692        0          0
+tb_neuroedge_uvm_top.u_wb_if.assert_master_signals_stable             0        0   212772           1210        0          0
+tb_neuroedge_uvm_top.u_wb_if.assert_stb_implies_cyc                   0        0   212772           2274        0          0
+tb_neuroedge_uvm_top.u_wb_if.assert_timeout_guard                     0        0   212772           1064        0          0
+uvm_pkg.\uvm_component_name_check_visitor::visit .unnamed$$_0         0        0     2528           2528        0          0
 
 Assertions Incomplete:
                        ASSERTIONS                       CATEGORY SEVERITY ATTEMPTS REAL SUCCESSES FAILURES INCOMPLETE
-tb_neuroedge_uvm_top.u_ifu_axi_if.assert_arvalid_stable        0        0   205202         101576        0          6
+tb_neuroedge_uvm_top.u_ifu_axi_if.assert_arvalid_stable        0        0   212772         114611        0         15
 
 Assertions Without Attempts:
                        ASSERTIONS                       CATEGORY SEVERITY ATTEMPTS REAL SUCCESSES FAILURES INCOMPLETE

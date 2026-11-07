@@ -2,6 +2,7 @@
 # ==============================================================================
 # Script: run_all_uvm_tests.sh
 # Description: Automated Full Regression Test Runner for NeuroEdge SoC UVM TB
+#              with Multi-Seed Execution, Coverage Collection & Integrity Checks
 # ==============================================================================
 
 set -e
@@ -39,46 +40,60 @@ vcs -full64 -sverilog \
     -l comp_uvm.log
 echo ">>> VCS Compilation Clean!"
 
-# Test List: Name, Plusargs
+# Test List: Name, Plusargs, Multi-seed flag
+# Format: "test_name:plusargs:seeds_list"
 declare -a TESTS=(
-    "neuroedge_systolic_test:+CPU_OVERRIDE=1"
-    "neuroedge_wb_access_test:+CPU_OVERRIDE=1"
-    "neuroedge_uart_test:+CPU_OVERRIDE=1"
-    "neuroedge_concurrent_test:+CPU_OVERRIDE=1"
-    "neuroedge_error_resp_test:+CPU_OVERRIDE=1"
-    "neuroedge_firmware_test:"
+    "neuroedge_systolic_test:+CPU_OVERRIDE=1:1,42,12345"
+    "neuroedge_wb_access_test:+CPU_OVERRIDE=1:1,42,12345"
+    "neuroedge_uart_test:+CPU_OVERRIDE=1:1,42"
+    "neuroedge_uart_fifo_test:+CPU_OVERRIDE=1:1,42"
+    "neuroedge_concurrent_test:+CPU_OVERRIDE=1:1,42,12345"
+    "neuroedge_error_resp_test:+CPU_OVERRIDE=1:1,42"
+    "neuroedge_firmware_test::1"
 )
 
-echo ">>> [Phase 2/4] Executing 6 UVM Simulation Tests..."
+echo ">>> [Phase 2/4] Executing UVM Simulation Tests across Multiple Seeds..."
 rm -rf neuroedge_cov.vdb
 
 declare -a RESULTS=()
+TOTAL_RUNS=0
+PASSED_RUNS=0
+FAILED_RUNS=0
 
 for TEST_ENTRY in "${TESTS[@]}"; do
-    IFS=":" read -r TNAME TARGS <<< "$TEST_ENTRY"
-    echo "------------------------------------------------------------------"
-    echo " Running UVM Test: $TNAME (Args: $TARGS)"
-    echo "------------------------------------------------------------------"
-    
-    set +e
-    ./simv_uvm +UVM_TESTNAME="$TNAME" \
-               +UVM_VERBOSITY=UVM_LOW \
-               +vcs+initreg+0 +vcs+initmem+0 \
-               -cm line+cond+fsm+tgl+branch+assert \
-               -cm_dir neuroedge_cov.vdb \
-               -cm_name "$TNAME" \
-               $TARGS \
-               -l "sim_${TNAME}.log"
-    STATUS=$?
-    set -e
-    
-    if grep -q "TEST RESULT: >>> PASSED <<<" "sim_${TNAME}.log" && [ $STATUS -eq 0 ]; then
-        echo ">>> [$TNAME] PASSED"
-        RESULTS+=("$TNAME: PASSED")
-    else
-        echo ">>> [$TNAME] FAILED"
-        RESULTS+=("$TNAME: FAILED")
-    fi
+    IFS=":" read -r TNAME TARGS SEEDS_STR <<< "$TEST_ENTRY"
+    IFS="," read -r -a SEED_ARRAY <<< "$SEEDS_STR"
+
+    for SEED in "${SEED_ARRAY[@]}"; do
+        TOTAL_RUNS=$((TOTAL_RUNS + 1))
+        RUN_NAME="${TNAME}_s${SEED}"
+        echo "------------------------------------------------------------------"
+        echo " Running: $TNAME (Seed: $SEED, Args: $TARGS)"
+        echo "------------------------------------------------------------------"
+
+        set +e
+        ./simv_uvm +UVM_TESTNAME="$TNAME" \
+                   +UVM_VERBOSITY=UVM_LOW \
+                   +ntb_random_seed="$SEED" \
+                   +vcs+initreg+0 +vcs+initmem+0 \
+                   -cm line+cond+fsm+tgl+branch+assert \
+                   -cm_dir neuroedge_cov.vdb \
+                   -cm_name "$RUN_NAME" \
+                   $TARGS \
+                   -l "sim_${RUN_NAME}.log"
+        STATUS=$?
+        set -e
+
+        if grep -q "TEST RESULT: >>> PASSED <<<" "sim_${RUN_NAME}.log" && [ $STATUS -eq 0 ]; then
+            echo ">>> [$RUN_NAME] PASSED"
+            RESULTS+=("$RUN_NAME: PASSED")
+            PASSED_RUNS=$((PASSED_RUNS + 1))
+        else
+            echo ">>> [$RUN_NAME] FAILED"
+            RESULTS+=("$RUN_NAME: FAILED")
+            FAILED_RUNS=$((FAILED_RUNS + 1))
+        fi
+    done
 done
 
 # Step 3: Coverage Generation via URG
@@ -105,10 +120,15 @@ echo ""
 echo "=================================================================="
 echo "          NEUROEDGE SOC UVM REGRESSION SUMMARY"
 echo "=================================================================="
+echo "  Total Simulation Runs: $TOTAL_RUNS"
+echo "  Passed Runs:           $PASSED_RUNS"
+echo "  Failed Runs:           $FAILED_RUNS"
+echo "------------------------------------------------------------------"
 for RES in "${RESULTS[@]}"; do
     echo "  $RES"
 done
+echo "------------------------------------------------------------------"
 echo "  Original Firmware Simulation: $ORIG_STATUS"
 echo "  FSDB Waveform: $SIM_DIR/neuroedge_uvm_sim.fsdb"
-echo "  Coverage Report: $PROJ_ROOT/verification/coverage_report/hierarchy.txt"
+echo "  Coverage Report: $PROJ_ROOT/verification/coverage_report/dashboard.txt"
 echo "=================================================================="
