@@ -1,0 +1,48 @@
+Category,Peripheral/Memory,Register Name,Address,Offset,Width,Access,Reset Value,Description
+Memory,Instruction SRAM,ISRAM,0x00000000,-,32,RW,0x00000000,32 KB Single-Port Instruction SRAM (0x0000_0000 - 0x0000_7FFF)
+Memory,Data SRAM (Stack/Data),DSRAM_STACK,0x20000000,-,32,RW,0x00000000,32 KB Data/Stack SRAM region (0x2000_0000 - 0x2000_7FFF)
+Memory,Data SRAM (Weights),DSRAM_WEIGHTS,0x20008000,-,32,RW,0x00000000,8 KB Neural Network Weights region (0x2000_8000 - 0x2000_9FFF)
+Memory,Data SRAM (Activations),DSRAM_ACTS,0x2000A000,-,32,RW,0x00000000,4 KB Neural Network Activations region (0x2000_A000 - 0x2000_AFFF)
+Memory,Data SRAM (Outputs),DSRAM_OUTS,0x2000B000,-,32,RW,0x00000000,4 KB Systolic Output Results region (0x2000_B000 - 0x2000_BFFF)
+Peripheral,SPI Controller,SPI_REG_CTRL,0x40000000,0x00,32,RW,0x00000000,SPI Control: Bit 0=En; Bit 1=Start; Bit 2=Auto-Read Stream
+Peripheral,SPI Controller,SPI_REG_STATUS,0x40000004,0x04,32,RO,0x00000004,SPI Status: Bit 0=Busy; Bit 1=Done; Bit 2=RX Empty
+Peripheral,SPI Controller,SPI_REG_CLKDIV,0x40000008,0x08,32,RW,0x00000002,SPI Clock Divisor Register
+Peripheral,SPI Controller,SPI_REG_FLASH_ADDR,0x4000000C,0x0C,32,RW,0x00000000,SPI 24-bit Flash Memory Start Address
+Peripheral,SPI Controller,SPI_REG_LENGTH,0x40000010,0x10,32,RW,0x00000000,SPI Transfer Length in Bytes
+Peripheral,DMA Controller,DMA_REG_CTRL,0x40001000,0x00,32,RW,0x00000000,DMA Control: Bit 0=En; Bit 1=CH0 En; Bit 2=CH1 En
+Peripheral,DMA Controller,DMA_REG_STATUS,0x40001004,0x04,32,RO,0x00000000,DMA Status: Bit 0=Busy; Bit 1=CH0 Done; Bit 2=CH1 Done; Bit 8=Err
+Peripheral,DMA Controller,DMA_REG_CH0_SRC,0x40001010,0x10,32,RW,0x00000000,DMA Channel 0 Source Address (Activations SRAM)
+Peripheral,DMA Controller,DMA_REG_CH0_DST,0x40001014,0x14,32,RW,0x40002014,DMA Channel 0 Destination Address (Systolic Act Port)
+Peripheral,DMA Controller,DMA_REG_CH0_LEN,0x40001018,0x18,32,RW,0x00000000,DMA Channel 0 Transfer Word Length
+Peripheral,DMA Controller,DMA_REG_CH1_SRC,0x40001020,0x20,32,RW,0x00000000,DMA Channel 1 Source Address (Weights SRAM)
+Peripheral,DMA Controller,DMA_REG_CH1_DST,0x40001024,0x24,32,RW,0x40002010,DMA Channel 1 Destination Address (Systolic Weight Port)
+Peripheral,DMA Controller,DMA_REG_CH1_LEN,0x40001028,0x28,32,RW,0x00000000,DMA Channel 1 Transfer Word Length
+Peripheral,Systolic Array,ARRAY_REG_CTRL,0x40002000,0x00,32,RW,0x00000000,Systolic Array Control: Bit 0=En; Bit 1=Start; Bit 2=Clear Acc
+Peripheral,Systolic Array,ARRAY_REG_STATUS,0x40002004,0x04,32,RO,0x00000000,Systolic Array Status: Bit 0=Busy; Bit 1=Done; Bit 2=Overflow
+Peripheral,Systolic Array,ARRAY_REG_CFG,0x40002008,0x08,32,RW,0x00000000,Systolic Configuration: Shift and Activation Parameters
+Peripheral,Systolic Array,ARRAY_REG_WEIGHT_PORT,0x40002010,0x10,32,WO,0x00000000,Systolic 4x INT8 Packed Weight Injection Port
+Peripheral,Systolic Array,ARRAY_REG_ACT_PORT,0x40002014,0x14,32,WO,0x00000000,Systolic 4x INT8 Packed Activation Injection Port
+Peripheral,Systolic Array,ARRAY_REG_RES_0,0x40002020,0x20,32,RO,0x00000000,Systolic Output Row 0 Accumulator (32-bit signed)
+Peripheral,Systolic Array,ARRAY_REG_RES_1,0x40002024,0x24,32,RO,0x00000000,Systolic Output Row 1 Accumulator (32-bit signed)
+Peripheral,Systolic Array,ARRAY_REG_RES_2,0x40002028,0x28,32,RO,0x00000000,Systolic Output Row 2 Accumulator (32-bit signed)
+Peripheral,Systolic Array,ARRAY_REG_RES_3,0x4000202C,0x2C,32,RO,0x00000000,Systolic Output Row 3 Accumulator (32-bit signed)
+Peripheral,UART 16550,UART_REG_TX_DATA,0x40003000,0x00,32,WO,0x00000000,UART Transmit FIFO Data Port (8-byte FIFO)
+Peripheral,UART 16550,UART_REG_RX_DATA,0x40003004,0x04,32,RO,0x00000000,UART Receive FIFO Data Port (8-byte FIFO)
+Peripheral,UART 16550,UART_REG_STATUS,0x40003008,0x08,32,RO,0x00000000,UART Status: Bit 0=TX Busy; Bit 1=TX Full; Bit 2=RX Valid; Bit 3=RX Overrun
+Peripheral,UART 16550,UART_REG_BAUD_DIV,0x4000300C,0x0C,32,RW,0x0000001F,UART 16-bit Baud Divisor Register
+Peripheral,Timer 32-bit,TIMER_REG_CTRL,0x40004000,0x00,32,RW,0x00000000,Timer Control: Bit 0=En; Bit 1=Auto-Reload
+Peripheral,Timer 32-bit,TIMER_REG_CNT,0x40004004,0x04,32,RW,0x00000000,Timer 32-bit Current Counter Value
+Peripheral,Timer 32-bit,TIMER_REG_CMP,0x40004008,0x08,32,RW,0xFFFFFFFF,Timer 32-bit Compare Match Register
+Peripheral,Timer 32-bit,TIMER_REG_STATUS,0x4000400C,0x0C,32,RO,0x00000000,Timer Status: Bit 0=Match Flag (W1C or auto-cleared)
+Peripheral,Watchdog Timer,WDT_REG_CTRL,0x40005000,0x00,32,RW,0x00000000,Watchdog Control: Bit 0=En; Bit 1=System Reset En
+Peripheral,Watchdog Timer,WDT_REG_KICK,0x40005004,0x04,32,WO,0x00000000,Watchdog Heartbeat Kick Port (write 0xA5A55A5A to reload)
+Peripheral,Watchdog Timer,WDT_REG_TIMEOUT,0x40005008,0x08,32,RW,0x00010000,Watchdog 32-bit Countdown Timeout Value
+Peripheral,Watchdog Timer,WDT_REG_STATUS,0x4000500C,0x0C,32,RO,0x00000000,Watchdog Status: Bit 0=Bark Flag (impending reset indicator)
+Peripheral,GPIO 8-bit,GPIO_REG_IN,0x40006000,0x00,32,RO,0x00000000,GPIO 8-bit Input Pins (2-stage synchronized)
+Peripheral,GPIO 8-bit,GPIO_REG_OUT,0x40006004,0x04,32,RW,0x00000000,GPIO 8-bit Output Data Register
+Peripheral,GPIO 8-bit,GPIO_REG_DIR,0x40006008,0x08,32,RW,0x00000000,GPIO 8-bit Direction Register (1=Output, 0=Input)
+Peripheral,GPIO 8-bit,GPIO_REG_STATUS,0x4000600C,0x0C,32,RO,0x00000000,GPIO Status: Bit 0=Input Edge Transition Flag
+Peripheral,PIC Controller,PIC_REG_ENABLE,0x40007000,0x00,32,RW,0x00000000,PIC 6-bit Interrupt Enable Mask
+Peripheral,PIC Controller,PIC_REG_PENDING,0x40007004,0x04,32,RO,0x00000000,PIC 6-bit Pending Interrupt Status Register
+Peripheral,PIC Controller,PIC_REG_PRIORITY,0x40007008,0x08,32,RW,0x00000000,PIC 6-bit Interrupt Priority Scheme Configuration
+Peripheral,PIC Controller,PIC_REG_ACK,0x4000700C,0x0C,32,WO,0x00000000,PIC 6-bit Interrupt Acknowledge Port (write 1 to clear)
