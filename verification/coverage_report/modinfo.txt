@@ -1,0 +1,530 @@
+===============================================================================
+Module : uvm_pkg
+===============================================================================
+SCORE  ASSERT 
+ 33.33  33.33 
+
+Module self-instances :
+
+SCORE ASSERT NAME 
+
+
+
+-------------------------------------------------------------------------------
+Assert Coverage for Module : uvm_pkg
+                 Total Attempted Percent Succeeded/Matched Percent 
+Assertions       3     1         33.33   1                 33.33   
+Cover properties 0     0                 0                         
+Cover sequences  0     0                 0                         
+Total            3     1         33.33   1                 33.33   
+
+
+
+-------------------------------------------------------------------------------
+
+Assertion Details
+
+Name                                                  Attempts Real Successes Failures Incomplete 
+\uvm_component_name_check_visitor::visit .unnamed$$_0 948      948            0        0          
+\uvm_reg_map::do_read .unnamed$$_0.unnamed$$_1        0        0              0        0          
+\uvm_reg_map::do_write .unnamed$$_0.unnamed$$_1       0        0              0        0          
+
+
+===============================================================================
+Module : axi4_if
+===============================================================================
+SCORE  ASSERT 
+ 75.00  75.00 
+
+Module self-instances :
+
+SCORE  ASSERT NAME                              
+ 25.00  25.00 tb_neuroedge_uvm_top.u_ifu_axi_if 
+ 75.00  75.00 tb_neuroedge_uvm_top.u_lsu_axi_if 
+
+
+
+-------------------------------------------------------------------------------
+Assert Coverage for Module : axi4_if
+                 Total Attempted Percent Succeeded/Matched Percent 
+Assertions       4     4         100.00  3                 75.00   
+Cover properties 0     0                 0                         
+Cover sequences  0     0                 0                         
+Total            4     4         100.00  3                 75.00   
+
+
+
+-------------------------------------------------------------------------------
+
+Assertion Details
+
+Name                  Attempts Real Successes Failures Incomplete 
+assert_arvalid_stable 410404   116964         0        6          
+assert_awvalid_stable 410404   4509           0        0          
+assert_rvalid_stable  410404   0              0        0          
+assert_wvalid_stable  410404   4509           0        0          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_neuroedge_uvm_top.u_ifu_axi_if
+===============================================================================
+
+Instance :
+
+SCORE  ASSERT 
+ 25.00  25.00 
+
+
+Instance's subtree :
+
+SCORE  ASSERT 
+ 25.00  25.00 
+
+
+Module : 
+
+SCORE  ASSERT NAME    
+ 75.00  75.00 axi4_if 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Assert Coverage for Instance : tb_neuroedge_uvm_top.u_ifu_axi_if
+                 Total Attempted Percent Succeeded/Matched Percent 
+Assertions       4     4         100.00  1                 25.00   
+Cover properties 0     0                 0                         
+Cover sequences  0     0                 0                         
+Total            4     4         100.00  1                 25.00   
+
+
+
+-------------------------------------------------------------------------------
+
+Assertion Details
+
+Name                  Attempts Real Successes Failures Incomplete 
+assert_arvalid_stable 205202   101576         0        6          
+assert_awvalid_stable 205202   0              0        0          
+assert_rvalid_stable  205202   0              0        0          
+assert_wvalid_stable  205202   0              0        0          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_neuroedge_uvm_top.u_lsu_axi_if
+===============================================================================
+
+Instance :
+
+SCORE  ASSERT 
+ 75.00  75.00 
+
+
+Instance's subtree :
+
+SCORE  ASSERT 
+ 75.00  75.00 
+
+
+Module : 
+
+SCORE  ASSERT NAME    
+ 75.00  75.00 axi4_if 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Assert Coverage for Instance : tb_neuroedge_uvm_top.u_lsu_axi_if
+                 Total Attempted Percent Succeeded/Matched Percent 
+Assertions       4     4         100.00  3                 75.00   
+Cover properties 0     0                 0                         
+Cover sequences  0     0                 0                         
+Total            4     4         100.00  3                 75.00   
+
+
+
+-------------------------------------------------------------------------------
+
+Assertion Details
+
+Name                  Attempts Real Successes Failures Incomplete 
+assert_arvalid_stable 205202   15388          0        0          
+assert_awvalid_stable 205202   4509           0        0          
+assert_rvalid_stable  205202   0              0        0          
+assert_wvalid_stable  205202   4509           0        0          
+
+
+===============================================================================
+Module : gpio_if
+===============================================================================
+SCORE  ASSERT 
+100.00 100.00 
+
+Module self-instances :
+
+SCORE  ASSERT NAME                           
+100.00 100.00 tb_neuroedge_uvm_top.u_gpio_if 
+
+
+
+-------------------------------------------------------------------------------
+Assert Coverage for Module : gpio_if
+                 Total Attempted Percent Succeeded/Matched Percent 
+Assertions       1     1         100.00  1                 100.00  
+Cover properties 0     0                 0                         
+Cover sequences  0     0                 0                         
+Total            1     1         100.00  1                 100.00  
+
+
+
+-------------------------------------------------------------------------------
+
+Assertion Details
+
+Name                  Attempts Real Successes Failures Incomplete 
+assert_gpio_out_known 205202   205172         0        0          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_neuroedge_uvm_top.u_gpio_if
+===============================================================================
+
+Instance :
+
+SCORE  ASSERT 
+100.00 100.00 
+
+
+Instance's subtree :
+
+SCORE  ASSERT 
+100.00 100.00 
+
+
+Module : 
+
+SCORE  ASSERT NAME    
+100.00 100.00 gpio_if 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : spi_flash_if
+===============================================================================
+SCORE  ASSERT 
+100.00 100.00 
+
+Module self-instances :
+
+SCORE  ASSERT NAME                          
+100.00 100.00 tb_neuroedge_uvm_top.u_spi_if 
+
+
+
+-------------------------------------------------------------------------------
+Assert Coverage for Module : spi_flash_if
+                 Total Attempted Percent Succeeded/Matched Percent 
+Assertions       1     1         100.00  1                 100.00  
+Cover properties 0     0                 0                         
+Cover sequences  0     0                 0                         
+Total            1     1         100.00  1                 100.00  
+
+
+
+-------------------------------------------------------------------------------
+
+Assertion Details
+
+Name                Attempts Real Successes Failures Incomplete 
+assert_spi_cs_known 205202   205172         0        0          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_neuroedge_uvm_top.u_spi_if
+===============================================================================
+
+Instance :
+
+SCORE  ASSERT 
+100.00 100.00 
+
+
+Instance's subtree :
+
+SCORE  ASSERT 
+100.00 100.00 
+
+
+Module : 
+
+SCORE  ASSERT NAME         
+100.00 100.00 spi_flash_if 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : systolic_if
+===============================================================================
+SCORE  ASSERT 
+100.00 100.00 
+
+Module self-instances :
+
+SCORE  ASSERT NAME                               
+100.00 100.00 tb_neuroedge_uvm_top.u_systolic_if 
+
+
+
+-------------------------------------------------------------------------------
+Assert Coverage for Module : systolic_if
+                 Total Attempted Percent Succeeded/Matched Percent 
+Assertions       1     1         100.00  1                 100.00  
+Cover properties 0     0                 0                         
+Cover sequences  0     0                 0                         
+Total            1     1         100.00  1                 100.00  
+
+
+
+-------------------------------------------------------------------------------
+
+Assertion Details
+
+Name                   Attempts Real Successes Failures Incomplete 
+assert_array_irq_known 205202   205172         0        0          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_neuroedge_uvm_top.u_systolic_if
+===============================================================================
+
+Instance :
+
+SCORE  ASSERT 
+100.00 100.00 
+
+
+Instance's subtree :
+
+SCORE  ASSERT 
+100.00 100.00 
+
+
+Module : 
+
+SCORE  ASSERT NAME        
+100.00 100.00 systolic_if 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : uart_if
+===============================================================================
+SCORE  ASSERT 
+100.00 100.00 
+
+Module self-instances :
+
+SCORE  ASSERT NAME                           
+100.00 100.00 tb_neuroedge_uvm_top.u_uart_if 
+
+
+
+-------------------------------------------------------------------------------
+Assert Coverage for Module : uart_if
+                 Total Attempted Percent Succeeded/Matched Percent 
+Assertions       2     2         100.00  2                 100.00  
+Cover properties 0     0                 0                         
+Cover sequences  0     0                 0                         
+Total            2     2         100.00  2                 100.00  
+
+
+
+-------------------------------------------------------------------------------
+
+Assertion Details
+
+Name                      Attempts Real Successes Failures Incomplete 
+assert_uart_start_bit     205202   3516           0        0          
+assert_uart_tx_reset_idle 205202   6              0        0          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_neuroedge_uvm_top.u_uart_if
+===============================================================================
+
+Instance :
+
+SCORE  ASSERT 
+100.00 100.00 
+
+
+Instance's subtree :
+
+SCORE  ASSERT 
+100.00 100.00 
+
+
+Module : 
+
+SCORE  ASSERT NAME    
+100.00 100.00 uart_if 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : wb_if
+===============================================================================
+SCORE  ASSERT 
+100.00 100.00 
+
+Module self-instances :
+
+SCORE  ASSERT NAME                         
+100.00 100.00 tb_neuroedge_uvm_top.u_wb_if 
+
+
+
+-------------------------------------------------------------------------------
+Assert Coverage for Module : wb_if
+                 Total Attempted Percent Succeeded/Matched Percent 
+Assertions       4     4         100.00  4                 100.00  
+Cover properties 0     0                 0                         
+Cover sequences  0     0                 0                         
+Total            4     4         100.00  4                 100.00  
+
+
+
+-------------------------------------------------------------------------------
+
+Assertion Details
+
+Name                              Attempts Real Successes Failures Incomplete 
+assert_ack_err_mutually_exclusive 205202   205172         0        0          
+assert_master_signals_stable      205202   133            0        0          
+assert_stb_implies_cyc            205202   202            0        0          
+assert_timeout_guard              205202   69             0        0          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_neuroedge_uvm_top.u_wb_if
+===============================================================================
+
+Instance :
+
+SCORE  ASSERT 
+100.00 100.00 
+
+
+Instance's subtree :
+
+SCORE  ASSERT 
+100.00 100.00 
+
+
+Module : 
+
+SCORE  ASSERT NAME  
+100.00 100.00 wb_if 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.

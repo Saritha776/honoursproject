@@ -1,0 +1,17 @@
+Tests
+
+Total Coverage Summary 
+SCORE  ASSERT GROUP  
+ 66.33  76.47  56.18 
+
+
+Total tests in report: 6
+-------------------------------------------------------------------------------
+Data from the following tests was used to generate this report
+neuroedge_cov/neuroedge_systolic_test   
+neuroedge_cov/neuroedge_wb_access_test  
+neuroedge_cov/neuroedge_uart_test       
+neuroedge_cov/neuroedge_concurrent_test 
+neuroedge_cov/neuroedge_error_resp_test 
+neuroedge_cov/neuroedge_firmware_test   
+

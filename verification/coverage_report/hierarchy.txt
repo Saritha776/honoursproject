@@ -1,0 +1,14 @@
+Design Hierarchy
+
+Warning: a full compile-time design hierarchy was not found in the database directories specified.  Only the hierarchy that could be inferred from the assertions information is shown.  The full hierarchy can be displayed only when a complete compile-time database is given.
+
+----------------
+SCORE  ASSERT                                    
+100.00 100.00 tb_neuroedge_uvm_top.u_gpio_if     
+ 25.00  25.00 tb_neuroedge_uvm_top.u_ifu_axi_if  
+ 75.00  75.00 tb_neuroedge_uvm_top.u_lsu_axi_if  
+100.00 100.00 tb_neuroedge_uvm_top.u_spi_if      
+100.00 100.00 tb_neuroedge_uvm_top.u_systolic_if 
+100.00 100.00 tb_neuroedge_uvm_top.u_uart_if     
+100.00 100.00 tb_neuroedge_uvm_top.u_wb_if       
+

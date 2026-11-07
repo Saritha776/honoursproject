@@ -1,0 +1,40 @@
+Dashboard
+
+Date: Sat Nov  7 13:29:32 2026
+
+User: student
+
+Version: U-2023.03
+Command line: urg -dir neuroedge_cov.vdb -report /home/student/Documents/honoursproject/honoursproject/verification/coverage_report -format text 
+
+Number of tests: 6
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  ASSERT GROUP  
+ 66.33  76.47  56.18 
+
+
+-------------------------------------------------------------------------------
+Hierarchical coverage data for top-level instances 
+SCORE  ASSERT NAME                               
+100.00 100.00 tb_neuroedge_uvm_top.u_gpio_if     
+ 25.00  25.00 tb_neuroedge_uvm_top.u_ifu_axi_if  
+ 75.00  75.00 tb_neuroedge_uvm_top.u_lsu_axi_if  
+100.00 100.00 tb_neuroedge_uvm_top.u_spi_if      
+100.00 100.00 tb_neuroedge_uvm_top.u_systolic_if 
+100.00 100.00 tb_neuroedge_uvm_top.u_uart_if     
+100.00 100.00 tb_neuroedge_uvm_top.u_wb_if       
+
+
+-------------------------------------------------------------------------------
+Total Module Definition Coverage Summary 
+SCORE  ASSERT 
+ 81.25  81.25 
+
+
+-------------------------------------------------------------------------------
+Total Groups Coverage Summary 
+SCORE  WEIGHT 
+ 56.18 1      
+

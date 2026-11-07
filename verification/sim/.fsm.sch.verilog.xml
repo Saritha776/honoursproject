@@ -1,0 +1,32 @@
+<Command name="schRTLInfo"  delimiter="."  >
+<RTLBlock >
+<RTLInfo   name="state_0"  type="2"  fileName="/home/student/Documents/honoursproject/honoursproject/rtl/dma_controller.sv"  >
+    <Seg beginLine="165"  endLine="261"  />
+  </RTLInfo>
+<Instance name="tb_neuroedge_uvm_top.dut.u_dma"  />
+</RTLBlock>
+<RTLBlock >
+<RTLInfo   name="state_1"  type="2"  fileName="/home/student/Documents/honoursproject/honoursproject/rtl/axi4_to_wishbone.sv"  >
+    <Seg beginLine="121"  endLine="376"  />
+  </RTLInfo>
+<Instance name="tb_neuroedge_uvm_top.dut.gen_veer_cpu.u_axi4_to_wb"  />
+</RTLBlock>
+<RTLBlock >
+<RTLInfo   name="state_2"  type="2"  fileName="/home/student/Documents/honoursproject/honoursproject/Cores-VeeR-EL2-main/design/dmi/rvjtag_tap.v"  >
+    <Seg beginLine="102"  endLine="123"  />
+  </RTLInfo>
+<Instance name="tb_neuroedge_uvm_top.dut.gen_veer_cpu.u_cpu.rvtop.dmi_wrapper.i_jtag_tap"  />
+</RTLBlock>
+<RTLBlock >
+<RTLInfo   name="user_verbosity_3"  type="2"  fileName="/home/student/snps_tools_target/vcs/U-2023.03/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv"  >
+    <Seg beginLine="47"  endLine="197"  />
+  </RTLInfo>
+<Instance name="uvm_custom_install_verdi_recording"  />
+</RTLBlock>
+<RTLBlock >
+<RTLInfo   name="state_4"  type="2"  fileName="/home/student/Documents/honoursproject/honoursproject/rtl/spi_flash_ctrl.sv"  >
+    <Seg beginLine="173"  endLine="283"  />
+  </RTLInfo>
+<Instance name="tb_neuroedge_uvm_top.dut.u_spi"  />
+</RTLBlock>
+</Command>

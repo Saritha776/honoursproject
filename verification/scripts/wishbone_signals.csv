@@ -1,0 +1,11 @@
+clk,input,1
+rst_n,input,1
+adr,input,32
+dat_w,input,32
+dat_r,output,32
+sel,input,4
+we,input,1
+stb,input,1
+cyc,input,1
+ack,output,1
+err,output,1

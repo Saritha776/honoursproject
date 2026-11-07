@@ -1,0 +1,869 @@
+Group : spi_flash_pkg::spi_flash_coverage::cg_spi_flash
+
+===============================================================================
+Group : spi_flash_pkg::spi_flash_coverage::cg_spi_flash
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+  0.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/spi_flash_vip/spi_flash_coverage.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   spi_flash_pkg::spi_flash_coverage::cg_spi_flash
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 6        6         0       0.00    
+
+
+Variables for Group  spi_flash_pkg::spi_flash_coverage::cg_spi_flash
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_cmd   1        1         0       0.00    100  1      1        0                    
+cp_len   3        3         0       0.00    100  1      1        0                    
+cp_addr  2        2         0       0.00    100  1      1        0                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_cmd
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 1        1         0       0.00    
+
+
+User Defined Bins for cp_cmd
+
+
+Uncovered bins
+
+NAME      COUNT AT LEAST NUMBER 
+READ_DATA 0     1        1      
+
+
+Excluded/Illegal bins
+
+NAME      COUNT STATUS   
+OTHER_CMD 0     Excluded 
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_len
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        3         0       0.00    
+
+
+User Defined Bins for cp_len
+
+
+Uncovered bins
+
+NAME        COUNT AT LEAST NUMBER 
+MATRIX_16B  0     1        1      
+WORD        0     1        1      
+SINGLE_BYTE 0     1        1      
+
+
+Excluded/Illegal bins
+
+NAME      COUNT STATUS   
+OTHER_LEN 0     Excluded 
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_addr
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        2         0       0.00    
+
+
+User Defined Bins for cp_addr
+
+
+Uncovered bins
+
+NAME      COUNT AT LEAST NUMBER 
+HIGHER    0     1        1      
+BASE_ZERO 0     1        1      
+
+
+Group : systolic_pkg::systolic_coverage::cg_systolic
+
+===============================================================================
+Group : systolic_pkg::systolic_coverage::cg_systolic
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+ 50.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/systolic_vip/systolic_coverage.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   systolic_pkg::systolic_coverage::cg_systolic
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 16       8         8       50.00   
+
+
+Variables for Group  systolic_pkg::systolic_coverage::cg_systolic
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_res0  4        2         2       50.00   100  1      1        0                    
+cp_res1  4        2         2       50.00   100  1      1        0                    
+cp_res2  4        2         2       50.00   100  1      1        0                    
+cp_res3  4        2         2       50.00   100  1      1        0                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_res0
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 4        2         2       50.00   
+
+
+User Defined Bins for cp_res0
+
+
+Uncovered bins
+
+NAME     COUNT AT LEAST NUMBER 
+POSITIVE 0     1        1      
+ZERO     0     1        1      
+
+
+Covered bins
+
+NAME     COUNT AT LEAST 
+EXP_VAL  5585  1        
+NEGATIVE 5585  1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_res1
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 4        2         2       50.00   
+
+
+User Defined Bins for cp_res1
+
+
+Uncovered bins
+
+NAME     COUNT AT LEAST NUMBER 
+POSITIVE 0     1        1      
+ZERO     0     1        1      
+
+
+Covered bins
+
+NAME     COUNT AT LEAST 
+EXP_VAL  5585  1        
+NEGATIVE 5585  1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_res2
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 4        2         2       50.00   
+
+
+User Defined Bins for cp_res2
+
+
+Uncovered bins
+
+NAME     COUNT AT LEAST NUMBER 
+ZERO     0     1        1      
+NEGATIVE 0     1        1      
+
+
+Covered bins
+
+NAME     COUNT AT LEAST 
+EXP_VAL  5585  1        
+POSITIVE 5585  1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_res3
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 4        2         2       50.00   
+
+
+User Defined Bins for cp_res3
+
+
+Uncovered bins
+
+NAME     COUNT AT LEAST NUMBER 
+ZERO     0     1        1      
+NEGATIVE 0     1        1      
+
+
+Covered bins
+
+NAME     COUNT AT LEAST 
+EXP_VAL  5585  1        
+POSITIVE 5585  1        
+
+
+Group : axi4_pkg::axi4_coverage::cg_axi4
+
+===============================================================================
+Group : axi4_pkg::axi4_coverage::cg_axi4
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+ 69.64 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/axi4_vip/axi4_coverage.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   axi4_pkg::axi4_coverage::cg_axi4
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 14       5         9       75.00   
+Crosses   22       14        8       56.25   
+
+
+Variables for Group  axi4_pkg::axi4_coverage::cg_axi4
+
+
+VARIABLE       EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_xfer_type   2        0         2       100.00  100  1      1        0                    
+cp_addr_region 3        0         3       100.00  100  1      1        0                    
+cp_len         4        3         1       25.00   100  1      1        0                    
+cp_size        4        2         2       50.00   100  1      1        0                    
+cp_burst       1        0         1       100.00  100  1      1        0                    
+
+
+Crosses for Group  axi4_pkg::axi4_coverage::cg_axi4
+
+
+CROSS             EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+cross_xfer_region 6        0         6       100.00  100  1      1        0                     
+cross_len_size    16       14        2       12.50   100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_xfer_type
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_xfer_type
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+WRITE 68994 1        
+READ  29800 1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_addr_region
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for cp_addr_region
+
+
+Excluded/Illegal bins
+
+NAME  COUNT STATUS   
+OTHER 0     Excluded 
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+PERIPH 3755  1        
+DSRAM  107   1        
+ISRAM  94932 1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_len
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 4        3         1       25.00   
+
+
+User Defined Bins for cp_len
+
+
+Uncovered bins
+
+NAME   COUNT AT LEAST NUMBER 
+LONG   0     1        1      
+MEDIUM 0     1        1      
+SHORT  0     1        1      
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+SINGLE 98794 1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_size
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 4        2         2       50.00   
+
+
+User Defined Bins for cp_size
+
+
+Uncovered bins
+
+NAME   COUNT AT LEAST NUMBER 
+BYTE_4 0     1        1      
+BYTE_2 0     1        1      
+
+
+Covered bins
+
+NAME   COUNT AT LEAST 
+BYTE_8 30407 1        
+BYTE_1 68387 1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_burst
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 1        0         1       100.00  
+
+
+User Defined Bins for cp_burst
+
+
+Bins
+
+NAME COUNT AT LEAST 
+INCR 30407 1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross cross_xfer_region
+
+
+Samples crossed: cp_xfer_type cp_addr_region
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 6        0         6       100.00          
+
+
+Automatically Generated Cross Bins for cross_xfer_region
+
+
+Bins
+
+cp_xfer_type cp_addr_region COUNT AT LEAST 
+WRITE        PERIPH         574   1        
+WRITE        DSRAM          33    1        
+WRITE        ISRAM          68387 1        
+READ         PERIPH         3181  1        
+READ         DSRAM          74    1        
+READ         ISRAM          26545 1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross cross_len_size
+
+
+Samples crossed: cp_len cp_size
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 16       14        2       12.50   14      
+
+
+Automatically Generated Cross Bins for cross_len_size
+
+
+Element holes
+
+cp_len                  cp_size COUNT AT LEAST NUMBER 
+[LONG , MEDIUM , SHORT] *       --    --       12     
+
+
+Uncovered bins
+
+cp_len   cp_size           COUNT AT LEAST NUMBER 
+[SINGLE] [BYTE_4 , BYTE_2] --    --       2      
+
+
+Covered bins
+
+cp_len cp_size COUNT AT LEAST 
+SINGLE BYTE_8  30407 1        
+SINGLE BYTE_1  68387 1        
+
+
+Group : wb_pkg::wb_coverage::cg_wb
+
+===============================================================================
+Group : wb_pkg::wb_coverage::cg_wb
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+ 70.24 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/wishbone_vip/wb_coverage.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   wb_pkg::wb_coverage::cg_wb
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 21       6         15      80.71   
+Crosses   34       16        18      49.29   
+
+
+Variables for Group  wb_pkg::wb_coverage::cg_wb
+
+
+VARIABLE  EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_op     2        0         2       100.00  100  1      1        0                    
+cp_slaves 10       2         8       80.00   100  1      1        0                    
+cp_sel    7        4         3       42.86   100  1      1        0                    
+cp_resp   2        0         2       100.00  100  1      1        0                    
+
+
+Crosses for Group  wb_pkg::wb_coverage::cg_wb
+
+
+CROSS          EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+cross_op_slave 20       6         14      70.00   100  1      1        0                     
+cross_op_sel   14       10        4       28.57   100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_op
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_op
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+WRITE 37    1        
+READ  32    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_slaves
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 10       2         8       80.00   
+
+
+User Defined Bins for cp_slaves
+
+
+Uncovered bins
+
+NAME COUNT AT LEAST NUMBER 
+DMA  0     1        1      
+SPI  0     1        1      
+
+
+Excluded/Illegal bins
+
+NAME     COUNT STATUS   
+UNMAPPED 1     Excluded 
+
+
+Covered bins
+
+NAME  COUNT AT LEAST 
+PIC   1     1        
+GPIO  3     1        
+WDT   2     1        
+TIMER 2     1        
+UART  3     1        
+ARRAY 29    1        
+DSRAM 27    1        
+ISRAM 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_sel
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 7        4         3       42.86   
+
+
+User Defined Bins for cp_sel
+
+
+Uncovered bins
+
+NAME     COUNT AT LEAST NUMBER 
+BYTE_3   0     1        1      
+BYTE_2   0     1        1      
+UPPER_HW 0     1        1      
+LOWER_HW 0     1        1      
+
+
+Covered bins
+
+NAME      COUNT AT LEAST 
+BYTE_1    1     1        
+BYTE_0    1     1        
+FULL_WORD 67    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_resp
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for cp_resp
+
+
+Bins
+
+NAME COUNT AT LEAST 
+ERR  1     1        
+ACK  68    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross cross_op_slave
+
+
+Samples crossed: cp_op cp_slaves
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 20       6         14      70.00   6       
+
+
+Automatically Generated Cross Bins for cross_op_slave
+
+
+Uncovered bins
+
+cp_op   cp_slaves   COUNT AT LEAST NUMBER 
+[WRITE] [PIC]       0     1        1      
+[WRITE] [DMA , SPI] --    --       2      
+[WRITE] [ISRAM]     0     1        1      
+[READ]  [DMA , SPI] --    --       2      
+
+
+Covered bins
+
+cp_op cp_slaves COUNT AT LEAST 
+WRITE GPIO      2     1        
+WRITE WDT       1     1        
+WRITE TIMER     1     1        
+WRITE UART      2     1        
+WRITE ARRAY     16    1        
+WRITE DSRAM     14    1        
+READ  PIC       1     1        
+READ  GPIO      1     1        
+READ  WDT       1     1        
+READ  TIMER     1     1        
+READ  UART      1     1        
+READ  ARRAY     13    1        
+READ  DSRAM     13    1        
+READ  ISRAM     1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross cross_op_sel
+
+
+Samples crossed: cp_op cp_sel
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 14       10        4       28.57   10      
+
+
+Automatically Generated Cross Bins for cross_op_sel
+
+
+Uncovered bins
+
+cp_op   cp_sel                                                    COUNT AT LEAST NUMBER 
+[WRITE] [BYTE_3 , BYTE_2]                                         --    --       2      
+[WRITE] [UPPER_HW , LOWER_HW]                                     --    --       2      
+[READ]  [BYTE_3 , BYTE_2 , BYTE_1 , BYTE_0 , UPPER_HW , LOWER_HW] --    --       6      
+
+
+Covered bins
+
+cp_op cp_sel    COUNT AT LEAST 
+WRITE BYTE_1    1     1        
+WRITE BYTE_0    1     1        
+WRITE FULL_WORD 35    1        
+READ  FULL_WORD 32    1        
+
+
+Group : uart_pkg::uart_coverage::cg_uart
+
+===============================================================================
+Group : uart_pkg::uart_coverage::cg_uart
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+ 72.22 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/uart_vip/uart_coverage.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   uart_pkg::uart_coverage::cg_uart
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 11       2         9       72.22   
+
+
+Variables for Group  uart_pkg::uart_coverage::cg_uart
+
+
+VARIABLE          EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_data_range     3        1         2       66.67   100  1      1        0                    
+cp_specific_chars 6        0         6       100.00  100  1      1        0                    
+cp_frame_err      2        1         1       50.00   100  1      1        0                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_data_range
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        1         2       66.67   
+
+
+User Defined Bins for cp_data_range
+
+
+Uncovered bins
+
+NAME     COUNT AT LEAST NUMBER 
+EXTENDED 0     1        1      
+
+
+Covered bins
+
+NAME          COUNT AT LEAST 
+PRINTABLE     1091  1        
+CONTROL_CHARS 90    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_specific_chars
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 6        0         6       100.00  
+
+
+User Defined Bins for cp_specific_chars
+
+
+Bins
+
+NAME     COUNT AT LEAST 
+RBRACKET 14    1        
+LBRACKET 14    1        
+EQUALS   176   1        
+SPACE    227   1        
+CR       60    1        
+NEWLINE  30    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_frame_err
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        1         1       50.00   
+
+
+User Defined Bins for cp_frame_err
+
+
+Uncovered bins
+
+NAME  COUNT AT LEAST NUMBER 
+ERROR 0     1        1      
+
+
+Covered bins
+
+NAME     COUNT AT LEAST 
+NO_ERROR 1181  1        
+
+
+Group : gpio_pkg::gpio_coverage::cg_gpio
+
+===============================================================================
+Group : gpio_pkg::gpio_coverage::cg_gpio
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+ 75.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_coverage.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   gpio_pkg::gpio_coverage::cg_gpio
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 7        1         6       75.00   
+
+
+Variables for Group  gpio_pkg::gpio_coverage::cg_gpio
+
+
+VARIABLE      EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+cp_milestones 5        0         5       100.00  100  1      1        0                    
+cp_dir        2        1         1       50.00   100  1      1        0                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_milestones
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 5        0         5       100.00  
+
+
+User Defined Bins for cp_milestones
+
+
+Excluded/Illegal bins
+
+NAME  COUNT STATUS   
+OTHER 3     Excluded 
+
+
+Covered bins
+
+NAME    COUNT AT LEAST 
+SUCCESS 1     1        
+STAGE4  1     1        
+STAGE3  1     1        
+STAGE2  1     1        
+STAGE1  1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable cp_dir
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        1         1       50.00   
+
+
+User Defined Bins for cp_dir
+
+
+Uncovered bins
+
+NAME      COUNT AT LEAST NUMBER 
+ALL_INPUT 0     1        1      
+
+
+Covered bins
+
+NAME       COUNT AT LEAST 
+ALL_OUTPUT 8     1        
+
+

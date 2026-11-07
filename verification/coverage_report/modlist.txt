@@ -1,0 +1,19 @@
+Design Module List
+
+Total Module Definition Coverage Summary 
+SCORE  ASSERT 
+ 81.25  81.25 
+
+
+Total modules in report: 7
+-------------------------------------------------------------------------------
+Warning: This is only the limited module list for assertion coverage because the design file can not be found in loading base coverage database.
+SCORE  ASSERT NAME         
+ 33.33  33.33 uvm_pkg      
+ 75.00  75.00 axi4_if      
+100.00 100.00 gpio_if      
+100.00 100.00 spi_flash_if 
+100.00 100.00 systolic_if  
+100.00 100.00 uart_if      
+100.00 100.00 wb_if        
+

@@ -23,3 +23,14 @@ firmware/*.exe
 # Python caches
 __pycache__/
 *.pyc
+
+# VCS / Verdi / Coverage artifacts
+simv*
+*.daidir/
+csrc/
+ucli.key
+*.vdb/
+*Log/
+verdiLog/
+novas.*
+vc_hdrs.h

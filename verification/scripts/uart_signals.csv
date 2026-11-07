@@ -1,0 +1,4 @@
+clk,input,1
+rst_n,input,1
+tx,output,1
+rx,input,1
