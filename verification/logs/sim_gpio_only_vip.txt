@@ -1,0 +1,212 @@
+Command: /home/student/Documents/honoursproject/honoursproject/verification/sim/./simv_uvm +UVM_TESTNAME=neuroedge_gpio_test +UVM_VERBOSITY=UVM_LOW +FSDB_FILE=neuroedge_gpio_only_vip.fsdb -l sim_gpio_only_vip.log
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03_Full64; Runtime version U-2023.03_Full64;  Nov  7 16:38 2026
+UVM_INFO /home/student/snps_tools_target/vcs/U-2023.03/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+*Verdi* Loading libsscore_vcs202303.so
+FSDB Dumper for VCS, Release Verdi_U-2023.03-SP1, Linux x86_64/64bit, 05/28/2023
+(C) 1996 - 2023 by Synopsys, Inc.
+*Verdi* : Create FSDB file 'neuroedge_gpio_only_vip.fsdb'
+*Verdi* : Begin traversing the scope (tb_neuroedge_uvm_top), layer (0).
+*Verdi* : Enable +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the SVA assertions, layer (0).
+*Verdi* : End of traversing the SVA assertions.
+UVM_INFO @ 0: reporter [RNTST] Running test neuroedge_gpio_test...
+UVM_INFO /home/student/snps_tools_target/vcs/U-2023.03/etc/uvm-1.2/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
+-----------------------------------------------------------------------
+Name                           Type                         Size  Value
+-----------------------------------------------------------------------
+uvm_test_top                   neuroedge_gpio_test          -     @354 
+  env                          neuroedge_env                -     @373 
+    gpio_agent_inst            gpio_agent                   -     @386 
+      cov                      gpio_coverage                -     @788 
+        analysis_imp           uvm_analysis_imp             -     @797 
+      drv                      gpio_driver                  -     @759 
+        rsp_port               uvm_analysis_port            -     @778 
+        seq_item_port          uvm_seq_item_pull_port       -     @768 
+      mon                      gpio_monitor                 -     @603 
+        item_collected_port    uvm_analysis_port            -     @612 
+      sb                       gpio_scoreboard              -     @807 
+        item_collected_export  uvm_analysis_imp             -     @816 
+      seqr                     gpio_sequencer               -     @622 
+        rsp_export             uvm_analysis_export          -     @631 
+        seq_item_export        uvm_seq_item_pull_imp        -     @749 
+        arbitration_queue      array                        0     -    
+        lock_queue             array                        0     -    
+        num_last_reqs          integral                     32    'd1  
+        num_last_rsps          integral                     32    'd1  
+    soc_sb                     neuroedge_scoreboard         -     @532 
+      gpio_export              uvm_analysis_imp_gpio        -     @571 
+      ifu_export               uvm_analysis_imp_ifu         -     @591 
+      lsu_export               uvm_analysis_imp_lsu         -     @581 
+      systolic_export          uvm_analysis_imp_systolic    -     @551 
+      uart_export              uvm_analysis_imp_uart        -     @561 
+      wb_export                uvm_analysis_imp_wb          -     @541 
+    v_seqr                     neuroedge_virtual_sequencer  -     @395 
+      rsp_export               uvm_analysis_export          -     @404 
+      seq_item_export          uvm_seq_item_pull_imp        -     @522 
+      arbitration_queue        array                        0     -    
+      lock_queue               array                        0     -    
+      num_last_reqs            integral                     32    'd1  
+      num_last_rsps            integral                     32    'd1  
+-----------------------------------------------------------------------
+
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/tests/neuroedge_gpio_test.sv(38) @ 0: uvm_test_top [neuroedge_gpio_test] ==================================================
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/tests/neuroedge_gpio_test.sv(39) @ 0: uvm_test_top [neuroedge_gpio_test]    Starting NeuroEdge SoC GPIO-Only VIP Test      
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/tests/neuroedge_gpio_test.sv(40) @ 0: uvm_test_top [neuroedge_gpio_test] ==================================================
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(54) @ 0: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] ==================================================
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(55) @ 0: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence]    Starting Systematic GPIO Input Stimulus Sequence
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(56) @ 0: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] ==================================================
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/tb_neuroedge_uvm_top.sv(36) @ 110000: reporter [TOP] System Reset Deasserted
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 270000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x00 (delay=7 clks) | GPIO_ITEM: In=0x00 (delay=7 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 270000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 1: All Zeros -> Driven: 0x00 (delay=7 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 350000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0xff (delay=4 clks) | GPIO_ITEM: In=0xff (delay=4 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 350000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 2: All Ones -> Driven: 0xff (delay=4 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 490000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0xaa (delay=7 clks) | GPIO_ITEM: In=0xaa (delay=7 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 490000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 3: Alternating 8'hAA -> Driven: 0xaa (delay=7 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 650000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x55 (delay=8 clks) | GPIO_ITEM: In=0x55 (delay=8 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 650000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 4: Alternating 8'h55 -> Driven: 0x55 (delay=8 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(71) @ 650000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] Pattern 5: Starting Walking-One Patterns (8 bits)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 810000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x01 (delay=8 clks) | GPIO_ITEM: In=0x01 (delay=8 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 810000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 5: Walking-One bit 0 -> Driven: 0x01 (delay=8 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 930000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x02 (delay=6 clks) | GPIO_ITEM: In=0x02 (delay=6 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 930000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 5: Walking-One bit 1 -> Driven: 0x02 (delay=6 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 1090000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x04 (delay=8 clks) | GPIO_ITEM: In=0x04 (delay=8 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 1090000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 5: Walking-One bit 2 -> Driven: 0x04 (delay=8 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 1250000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x08 (delay=8 clks) | GPIO_ITEM: In=0x08 (delay=8 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 1250000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 5: Walking-One bit 3 -> Driven: 0x08 (delay=8 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 1370000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x10 (delay=6 clks) | GPIO_ITEM: In=0x10 (delay=6 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 1370000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 5: Walking-One bit 4 -> Driven: 0x10 (delay=6 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 1470000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x20 (delay=5 clks) | GPIO_ITEM: In=0x20 (delay=5 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 1470000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 5: Walking-One bit 5 -> Driven: 0x20 (delay=5 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 1530000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x40 (delay=3 clks) | GPIO_ITEM: In=0x40 (delay=3 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 1530000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 5: Walking-One bit 6 -> Driven: 0x40 (delay=3 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 1570000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x80 (delay=2 clks) | GPIO_ITEM: In=0x80 (delay=2 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 1570000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 5: Walking-One bit 7 -> Driven: 0x80 (delay=2 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(77) @ 1570000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] Pattern 6: Starting Walking-Zero Patterns (8 bits)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 1710000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0xfe (delay=7 clks) | GPIO_ITEM: In=0xfe (delay=7 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 1710000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 6: Walking-Zero bit 0 -> Driven: 0xfe (delay=7 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 1830000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0xfd (delay=6 clks) | GPIO_ITEM: In=0xfd (delay=6 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 1830000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 6: Walking-Zero bit 1 -> Driven: 0xfd (delay=6 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 1870000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0xfb (delay=2 clks) | GPIO_ITEM: In=0xfb (delay=2 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 1870000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 6: Walking-Zero bit 2 -> Driven: 0xfb (delay=2 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 2030000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0xf7 (delay=8 clks) | GPIO_ITEM: In=0xf7 (delay=8 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 2030000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 6: Walking-Zero bit 3 -> Driven: 0xf7 (delay=8 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 2130000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0xef (delay=5 clks) | GPIO_ITEM: In=0xef (delay=5 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 2130000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 6: Walking-Zero bit 4 -> Driven: 0xef (delay=5 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 2210000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0xdf (delay=4 clks) | GPIO_ITEM: In=0xdf (delay=4 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 2210000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 6: Walking-Zero bit 5 -> Driven: 0xdf (delay=4 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 2350000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0xbf (delay=7 clks) | GPIO_ITEM: In=0xbf (delay=7 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 2350000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 6: Walking-Zero bit 6 -> Driven: 0xbf (delay=7 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 2410000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x7f (delay=3 clks) | GPIO_ITEM: In=0x7f (delay=3 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(34) @ 2410000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Pattern 6: Walking-Zero bit 7 -> Driven: 0x7f (delay=3 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(83) @ 2410000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] Pattern 7: Starting Random GPIO Patterns (10 items)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 2550000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x57 (delay=7 clks) | GPIO_ITEM: In=0x57 (delay=7 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(48) @ 2550000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Random Pattern #1 -> Driven: 0x57 (delay=7 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 2630000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x2f (delay=4 clks) | GPIO_ITEM: In=0x2f (delay=4 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(48) @ 2630000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Random Pattern #2 -> Driven: 0x2f (delay=4 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 2710000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0xcb (delay=4 clks) | GPIO_ITEM: In=0xcb (delay=4 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(48) @ 2710000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Random Pattern #3 -> Driven: 0xcb (delay=4 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 2830000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x6f (delay=6 clks) | GPIO_ITEM: In=0x6f (delay=6 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(48) @ 2830000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Random Pattern #4 -> Driven: 0x6f (delay=6 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 2910000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x3c (delay=4 clks) | GPIO_ITEM: In=0x3c (delay=4 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(48) @ 2910000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Random Pattern #5 -> Driven: 0x3c (delay=4 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 2950000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x69 (delay=2 clks) | GPIO_ITEM: In=0x69 (delay=2 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(48) @ 2950000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Random Pattern #6 -> Driven: 0x69 (delay=2 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 3010000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x37 (delay=3 clks) | GPIO_ITEM: In=0x37 (delay=3 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(48) @ 3010000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Random Pattern #7 -> Driven: 0x37 (delay=3 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 3170000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x06 (delay=8 clks) | GPIO_ITEM: In=0x06 (delay=8 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(48) @ 3170000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Random Pattern #8 -> Driven: 0x06 (delay=8 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 3250000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x5c (delay=4 clks) | GPIO_ITEM: In=0x5c (delay=4 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(48) @ 3250000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Random Pattern #9 -> Driven: 0x5c (delay=4 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_driver.sv(50) @ 3350000: uvm_test_top.env.gpio_agent_inst.drv [gpio_driver] ★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x90 (delay=5 clks) | GPIO_ITEM: In=0x90 (delay=5 clks) | DUT Out=0x00 Dir=0x00 ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(48) @ 3350000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] [GPIO_SEQ] Finished Random Pattern #10 -> Driven: 0x90 (delay=5 clks)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(88) @ 3350000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] ==================================================
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(89) @ 3350000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence]    Completed All 7 GPIO Stimulus Patterns         
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_base_sequence.sv(90) @ 3350000: uvm_test_top.env.gpio_agent_inst.seqr@@seq [gpio_base_sequence] ==================================================
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/tests/neuroedge_gpio_test.sv(48) @ 3350000: uvm_test_top [neuroedge_gpio_test] ★ GPIO Base Sequence Completed All Stimulus Patterns ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_scoreboard.sv(50) @ 3593090000: uvm_test_top.env.gpio_agent_inst.sb [GPIO_SUCCESS] ★ GPIO Milestone 0xAA (All Firmware Tests Passed) Verified! ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(86) @ 3593090000: uvm_test_top.env.soc_sb [SOC_SB_GPIO] ★ [SoC Scoreboard] GPIO Status 0xAA Confirmed! ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/tests/neuroedge_gpio_test.sv(54) @ 3593090000: uvm_test_top [neuroedge_gpio_test] ★ GPIO Scoreboard Confirmed Milestone 0xAA from VeeR CPU! ★
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/tests/neuroedge_gpio_test.sv(61) @ 3598090000: uvm_test_top [neuroedge_gpio_test] ==================================================
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/tests/neuroedge_gpio_test.sv(62) @ 3598090000: uvm_test_top [neuroedge_gpio_test]    GPIO-Only VIP Test PASSED with Full Sequence   
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/tests/neuroedge_gpio_test.sv(63) @ 3598090000: uvm_test_top [neuroedge_gpio_test] ==================================================
+UVM_INFO /home/student/snps_tools_target/vcs/U-2023.03/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 3598090000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_vips/gpio_vip/gpio_scoreboard.sv(57) @ 3598090000: uvm_test_top.env.gpio_agent_inst.sb [gpio_scoreboard] GPIO Scoreboard Summary: TotalTransitions=36, InputTransitions=29, OutputTransitions=5, SuccessMilestoneSeen=1
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(93) @ 3598090000: uvm_test_top.env.soc_sb [neuroedge_scoreboard] ==================================================
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(94) @ 3598090000: uvm_test_top.env.soc_sb [neuroedge_scoreboard]        NEUROEDGE SOC TOP-LEVEL UVM SCOREBOARD     
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(95) @ 3598090000: uvm_test_top.env.soc_sb [neuroedge_scoreboard] ==================================================
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(96) @ 3598090000: uvm_test_top.env.soc_sb [neuroedge_scoreboard]   IFU Instruction Fetches:   0
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(97) @ 3598090000: uvm_test_top.env.soc_sb [neuroedge_scoreboard]   LSU Memory Transactions:   0
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(98) @ 3598090000: uvm_test_top.env.soc_sb [neuroedge_scoreboard]   Wishbone Bus Transactions: 0
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(99) @ 3598090000: uvm_test_top.env.soc_sb [neuroedge_scoreboard]   Systolic Computations:     0
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(100) @ 3598090000: uvm_test_top.env.soc_sb [neuroedge_scoreboard]   Target Results [-13,-41,94,7]:         CHECKED
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(102) @ 3598090000: uvm_test_top.env.soc_sb [neuroedge_scoreboard]   UART Telemetry Bytes:      0
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(103) @ 3598090000: uvm_test_top.env.soc_sb [neuroedge_scoreboard]   GPIO Pin Transitions:      36
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(104) @ 3598090000: uvm_test_top.env.soc_sb [neuroedge_scoreboard]   Firmware Completion 0xAA:  VERIFIED (PASS)
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/uvm_env/neuroedge_scoreboard.sv(106) @ 3598090000: uvm_test_top.env.soc_sb [neuroedge_scoreboard] ==================================================
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/tests/neuroedge_base_test.sv(42) @ 3598090000: uvm_test_top [neuroedge_gpio_test] --------------------------------------------------
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/tests/neuroedge_base_test.sv(44) @ 3598090000: uvm_test_top [neuroedge_gpio_test]              TEST RESULT: >>> PASSED <<<           
+UVM_INFO /home/student/Documents/honoursproject/honoursproject/verification/tests/neuroedge_base_test.sv(48) @ 3598090000: uvm_test_top [neuroedge_gpio_test] --------------------------------------------------
+UVM_INFO /home/student/snps_tools_target/vcs/U-2023.03/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 3598090000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /home/student/snps_tools_target/vcs/U-2023.03/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 3598090000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  101
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[GPIO_SUCCESS]     1
+[RNTST]     1
+[SOC_SB_GPIO]     1
+[TEST_DONE]     1
+[TOP]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[UVMTOP]     1
+[gpio_base_sequence]    39
+[gpio_driver]    30
+[gpio_scoreboard]     1
+[neuroedge_gpio_test]    11
+[neuroedge_scoreboard]    12
+
+$finish called from file "/home/student/snps_tools_target/vcs/U-2023.03/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time           3598090000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 3598090000 ps
+CPU Time:     10.060 seconds;       Data structure size:   1.8Mb
+Sat Nov  7 16:38:46 2026
