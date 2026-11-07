@@ -27,6 +27,7 @@ package neuroedge_seq_pkg;
     `include "neuroedge_uart_fifo_vseq.sv"
     `include "neuroedge_error_resp_vseq.sv"
     `include "neuroedge_concurrent_vseq.sv"
+    `include "neuroedge_gpio_vseq.sv"
 
 endpackage
 

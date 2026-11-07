@@ -28,6 +28,7 @@ package neuroedge_test_pkg;
     `include "neuroedge_uart_fifo_test.sv"
     `include "neuroedge_concurrent_test.sv"
     `include "neuroedge_error_resp_test.sv"
+    `include "neuroedge_gpio_test.sv"
 
 endpackage
 
