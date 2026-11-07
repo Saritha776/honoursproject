@@ -1,12 +1,12 @@
 // ==============================================================================
 // Class: gpio_sequencer.sv
-// Description: GPIO Sequencer
+// Description: GPIO Sequencer parametrized with gpio_seq_item
 // ==============================================================================
 
 `ifndef GPIO_SEQUENCER_SV
 `define GPIO_SEQUENCER_SV
 
-class gpio_sequencer extends uvm_sequencer #(gpio_item);
+class gpio_sequencer extends uvm_sequencer #(gpio_seq_item);
 
     `uvm_component_utils(gpio_sequencer)
 

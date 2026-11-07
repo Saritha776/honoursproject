@@ -1,12 +1,12 @@
 // ==============================================================================
 // Class: gpio_driver.sv
-// Description: Driver for GPIO input pins
+// Description: Driver for GPIO input pins implementing standard UVM handshake flow
 // ==============================================================================
 
 `ifndef GPIO_DRIVER_SV
 `define GPIO_DRIVER_SV
 
-class gpio_driver extends uvm_driver #(gpio_item);
+class gpio_driver extends uvm_driver #(gpio_seq_item);
 
     virtual gpio_if vif;
     gpio_cfg        cfg;
@@ -32,15 +32,24 @@ class gpio_driver extends uvm_driver #(gpio_item);
 
         forever begin
             seq_item_port.get_next_item(req);
+
+            // Drive GPIO input transaction through virtual interface
             drive_item(req);
+
             seq_item_port.item_done();
         end
     endtask
 
-    task drive_item(gpio_item req);
-        @(posedge vif.clk);
+    task drive_item(gpio_seq_item req);
+        // Wait specified inter-transaction delay
+        repeat (req.delay > 0 ? req.delay : 2) @(posedge vif.clk);
+
+        // Drive DUT input pin gpio_in synchronously
         vif.gpio_in <= req.gpio_in;
-        `uvm_info("GPIO_INJ_DRIVER", $sformatf("★ [GPIO_INJ_DRIVER] Injected Single Pin Value: gpio_in = 0x%02h ★", req.gpio_in), UVM_NONE)
+
+        `uvm_info(get_type_name(),
+            $sformatf("★ [GPIO_DRIVER] Drove DUT Input: gpio_in = 0x%02h (delay=%0d clks) | %s ★",
+                      req.gpio_in, req.delay, req.convert2string()), UVM_LOW)
     endtask
 
 endclass

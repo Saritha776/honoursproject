@@ -97,11 +97,15 @@ module tb_neuroedge_uvm_top;
     // UVM Config DB Setup & Simulation Entry
     // =========================================================================
     initial begin
+        string fsdb_name;
         // Pass single GPIO virtual interface into UVM Config DB strictly ONE time
         uvm_config_db#(virtual gpio_if)::set(null, "*", "vif", u_gpio_if);
 
-        // FSDB Waveform Dumping: captures single GPIO VIP and DUT GPIO clearly
-        $fsdbDumpfile("neuroedge_uvm_sim.fsdb");
+        // Separate FSDB Waveform Dumping: defaults to neuroedge_gpio_only_vip.fsdb
+        if (!$value$plusargs("FSDB_FILE=%s", fsdb_name)) begin
+            fsdb_name = "neuroedge_gpio_only_vip.fsdb";
+        end
+        $fsdbDumpfile(fsdb_name);
         $fsdbDumpvars(0, tb_neuroedge_uvm_top, "+all");
         $fsdbDumpSVA;
 
